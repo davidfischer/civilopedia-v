@@ -10,5 +10,14 @@
       <arg value="." />
       <env key="os_opts" value="-Djava.awt.headless=true" />
     </exec>
+
+    <!-- Checkstyle is currently optional -->
+    <echo message="Running checkstyle (if available)" />
+    <exec executable="checkstyle" failifexecutionfails="false">
+      <arg value="-c" />
+      <arg value="checkstyle/checks.xml" />
+      <arg value="-r" />
+      <arg value="src" />
+    </exec>
   </target>
 </project>
