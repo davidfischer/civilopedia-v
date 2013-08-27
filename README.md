@@ -14,7 +14,7 @@ Building
 --------
 
 To build the app, you will need to either set the `$ANDROID_HOME` environment
-variable or create `local.properties` file specifying the location of the
+variable or create a `local.properties` file specifying the location of the
 Android SDK (`sdk.dir`).
 
 You will also need [Apache Ant](http://ant.apache.org/), a command line build
