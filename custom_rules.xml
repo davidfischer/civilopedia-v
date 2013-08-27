@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="custom_rules">
+  <xmlproperty file="AndroidManifest.xml" prefix="mymanifest" collapseAttributes="true"/>
+  <target name="-post-build">
+    <echo message="Linting ." />
+    <exec executable="${lint}" failonerror="true">
+      <arg value="-Wall" />
+      <arg value="-Werror" />
+      <arg value="--exitcode" />
+      <arg value="." />
+      <env key="os_opts" value="-Djava.awt.headless=true" />
+    </exec>
+  </target>
+</project>
