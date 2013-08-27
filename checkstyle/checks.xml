@@ -6,6 +6,10 @@
     <!--<module name="JavadocPackage" />-->
 
 
+    <!-- Spaces only -->
+    <module name="FileTabCharacter"/>
+
+
     <module name="TreeWalker">
         <!-- Checks for uncommented main() methods (debugging leftovers). -->
         <!-- See http://checkstyle.sourceforge.net/config_misc.html#UncommentedMain -->
