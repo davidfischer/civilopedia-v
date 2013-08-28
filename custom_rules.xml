@@ -3,7 +3,7 @@
   <xmlproperty file="AndroidManifest.xml" prefix="mymanifest" collapseAttributes="true"/>
   <target name="-post-build">
     <echo message="Linting ." />
-    <exec executable="${lint}" failonerror="true">
+    <exec executable="${lint}" failonerror="false">
       <arg value="-Wall" />
       <arg value="-Werror" />
       <arg value="--exitcode" />
