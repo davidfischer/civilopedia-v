@@ -6,6 +6,7 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -13,6 +14,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +62,6 @@ public class CivilopediaActivity extends Activity {
         mDrawerList.setAdapter(expListAdapter);
 
         // Set the list's click listener
-        //mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
         mDrawerList.setOnChildClickListener(new DrawerChildClickListener());
 
         // enable ActionBar app icon to behave as action to toggle nav drawer
@@ -119,16 +121,6 @@ public class CivilopediaActivity extends Activity {
         return result;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-         // The action bar home/up action should open or close the drawer.
-         // ActionBarDrawerToggle will take care of this.
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     private class DrawerChildClickListener implements ExpandableListView.OnChildClickListener {
         /*@Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -178,6 +170,37 @@ public class CivilopediaActivity extends Activity {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+         // The action bar home/up action should open or close the drawer.
+         // ActionBarDrawerToggle will take care of this.
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        switch (item.getItemId()) {
+            case R.id.menu_about:
+                showAbout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_menu, menu);
+        return true;
+    }
+
+    /**
+     * Switch to AboutActivity via intent.
+     */
+    public void showAbout() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
     /**

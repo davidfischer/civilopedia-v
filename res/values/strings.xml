@@ -15,4 +15,17 @@
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- About menu and activity -->
+    <string name="menu_about">About</string>
+    <string name="about_name">About Civilopedia V</string>
+    <string name="about_text">
+        The Civilopedia contains the details for Firaxis\' Civilopedia V
+        and is intended to be a companion used during gameplay.
+    </string>
+    <string name="about_copyright">
+        The graphics and game text are extracted from the game itself
+        and are owned by Firaxis, the developer of Civilization V.
+    </string>
+    <string name="about_url">https://github.com/davidfischer/civilopedia_v</string>
 </resources>

@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textIsSelectable="true"
+        android:autoLink="all"
+        android:text="@string/about_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textIsSelectable="true"
+        android:autoLink="all"
+        android:text="@string/about_copyright" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textIsSelectable="true"
+        android:autoLink="all"
+        android:textSize="12sp"
+        android:text="@string/about_url" />
+</LinearLayout>
