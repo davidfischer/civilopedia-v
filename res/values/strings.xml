@@ -3,7 +3,7 @@
     <string name="app_name">Civilopedia V</string>
 
     <!-- List of drawer items -->
-    <string-array name="civ_categories_array">
+    <string-array name="civ_categories">
         <item>Technologies</item>
         <item>Units</item>
         <item>Buildings</item>
