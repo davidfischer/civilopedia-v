@@ -31,3 +31,6 @@ proguard/
 
 # Apple stuff
 .DS_Store
+
+# Python stuff
+*.pyc
