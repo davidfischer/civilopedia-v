@@ -29,6 +29,14 @@ public class CivilopediaDatabaseHelper extends SQLiteOpenHelper {
     private static final String TECHNOLOGY_COL_HELP = "help";
     private static final String TECHNOLOGY_COL_QUOTE = "quote";
     private static final String TECHNOLOGY_COL_COST = "cost";
+    private static final String [] TECHNOLOGY_COLS = new String [] {
+        TECHNOLOGY_COL_ID,
+        TECHNOLOGY_COL_NAME,
+        TECHNOLOGY_COL_CIVILOPEDIA,
+        TECHNOLOGY_COL_HELP,
+        TECHNOLOGY_COL_QUOTE,
+        TECHNOLOGY_COL_COST,
+    };
 
     private Context mContext;
     private String mDatabasePath;
@@ -171,7 +179,86 @@ public class CivilopediaDatabaseHelper extends SQLiteOpenHelper {
             cursor.moveToNext();
         }
         cursor.close();
+        conn.close();
 
         return result;
+    }
+
+    public TechnologyEntry getTechnologyByName(String techName) {
+        TechnologyEntry tech = new TechnologyEntry();
+
+        SQLiteDatabase conn = SQLiteDatabase.openDatabase(mDatabasePath, null, SQLiteDatabase.OPEN_READONLY);
+        Cursor cursor = conn.query(TECHNOLOGY_TABLE, TECHNOLOGY_COLS,
+                TECHNOLOGY_COL_NAME + "=?", new String [] { techName },
+                null, null, null);
+        cursor.moveToFirst();
+        if (!cursor.isAfterLast()) {
+            tech.setKey(cursor.getString(0));
+            tech.setName(cursor.getString(1));
+            tech.setCivilopedia(cursor.getString(2));
+            tech.setHelp(cursor.getString(3));
+            tech.setQuote(cursor.getString(4));
+            tech.setCost(cursor.getInt(5));
+        }
+        cursor.close();
+        conn.close();
+        return tech;
+    }
+
+    public static class TechnologyEntry {
+        private String mKey;
+        private String mName;
+        private String mQuote;
+        private String mCivilopedia;
+        private String mHelp;
+        private int mCost;  // in "beakers"
+
+        public String getKey() {
+            return mKey;
+        }
+
+        public void setKey(String key) {
+            this.mKey = key;
+        }
+
+        public String getName() {
+            return mName;
+        }
+
+        public void setName(String name) {
+            this.mName = name;
+        }
+
+        public String getQuote() {
+            return mQuote;
+        }
+
+        public void setQuote(String quote) {
+            this.mQuote = quote;
+        }
+
+        public String getCivilopedia() {
+            return mCivilopedia;
+        }
+
+        public void setCivilopedia(String civilopedia) {
+            this.mCivilopedia = civilopedia;
+        }
+
+        public String getHelp() {
+            return mHelp;
+        }
+
+        public void setHelp(String help) {
+            this.mHelp = help;
+        }
+
+        public int getCost() {
+            return mCost;
+        }
+
+        public void setCost(int cost) {
+            this.mCost = cost;
+        }
     }
 }

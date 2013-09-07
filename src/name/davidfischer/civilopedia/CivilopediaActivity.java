@@ -26,8 +26,8 @@ import android.widget.SimpleExpandableListAdapter;
 
 public class CivilopediaActivity extends Activity {
     private static final String TAG = CivilopediaActivity.class.getName();
-    private static final String CATEGORY = "CATEGORY";
-    private static final String CATEGORY_SUBITEM = "CATEGORY_SUBITEM";
+    public static final String CATEGORY = "CATEGORY";
+    public static final String CATEGORY_SUBITEM = "CATEGORY_SUBITEM";
 
     // Must match strings.xml
     private static final String TECHNOLOGIES = "TECHNOLOGIES";
@@ -106,6 +106,7 @@ public class CivilopediaActivity extends Activity {
         // If no item is selected (no app state) then open the drawer
         if (null == savedInstanceState) {
             setTitle(R.string.app_name);
+            selectItem(0, 0);
             mDrawerLayout.openDrawer(GravityCompat.START);
         }
     }
@@ -141,7 +142,6 @@ public class CivilopediaActivity extends Activity {
 
             // Highlight the selected item, update the title, and close the drawer
             mDrawerList.setSelectedChild(groupPosition, childPosition, true);
-            setTitle(mCategoryNames[groupPosition]);
             mDrawerLayout.closeDrawer(mDrawerList);
         } else {
             Log.w(TAG, String.format("Failed to instantiate fragment (%d, %d)", groupPosition, childPosition));
