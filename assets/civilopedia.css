@@ -92,6 +92,9 @@ h2 {
 .icon-fur {
   background: transparent url(fonticons.png) -220px -66px no-repeat;
 }
+.icon-great-people {
+  background: transparent url(fonticons.png) -22px -88px no-repeat;
+}
 .icon-occupied {
   background: transparent url(fonticons.png) -154px -88px no-repeat;
 }
@@ -363,9 +366,43 @@ h2 {
 .TECH_TRAPPING {
   background: transparent url(technologyatlastwo.png) -1320px -295px no-repeat;
 }
-.TECH_EMPTY {
+.TECH_ACOUSTICS {
   background: transparent url(technologyatlastwo.png) -1575px -295px no-repeat;
 }
-.TECH_ACOUSTICS {
+.TECH_EMPTY {
   background: transparent url(technologyatlastwo.png) -1833px -295px no-repeat;
+}
+/* Expansion techs */
+.TECH_ARCHITECTURE {
+  background: transparent url(techportraits256_expansion.png) -40px -40px no-repeat;
+}
+.TECH_BALLISTICS {
+  background: transparent url(techportraits256_expansion.png) -295px -40px no-repeat;
+}
+.TECH_GUILDS {
+  background: transparent url(techportraits256_expansion.png) -550px -40px no-repeat;
+}
+.TECH_COMBINED_ARMS {
+  background: transparent url(techportraits256_expansion.png) -808px -40px no-repeat;
+}
+/* Row 2 */
+.TECH_DRAMA {
+  background: transparent url(techportraits256_expansion.png) -40px -295px no-repeat;
+}
+.TECH_INDUSTRIALIZATION {
+  background: transparent url(techportraits256_expansion.png) -295px -295px no-repeat;
+}
+.TECH_MOBILE_TACTICS {
+  background: transparent url(techportraits256_expansion.png) -550px -295px no-repeat;
+}
+.TECH_TELECOM {
+  background: transparent url(techportraits256_expansion.png) -808px -295px no-repeat;
+}
+/* Engineering */
+.TECH_ENGINEERING {
+  background: transparent url(techatlas_shared256.png) -40px -40px no-repeat;
+}
+/* Internet */
+.TECH_INTERNET {
+  background: transparent url(techportraits256_exp2.png) -40px -40px no-repeat;
 }

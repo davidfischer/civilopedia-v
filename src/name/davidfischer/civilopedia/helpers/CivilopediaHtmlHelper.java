@@ -20,8 +20,8 @@ public final class CivilopediaHtmlHelper {
         new String [] {"[ICON_GOLD]", "<span class='icon icon-gold'></span>"},
         new String [] {"[ICON_CULTURE]", "<span class='icon icon-culture'></span>"},
         new String [] {"[ICON_RESEARCH]", "<span class='icon icon-research'></span>"},
-        new String [] {"[ICON_GOLDEN_AGE]", "<span class='icon icon-golden_age'></span>"},
-        new String [] {"[ICON_GREAT_PEOPLE]", "<span class='icon icon-great_people'></span>"},
+        new String [] {"[ICON_GOLDEN_AGE]", "<span class='icon icon-golden-age'></span>"},
+        new String [] {"[ICON_GREAT_PEOPLE]", "<span class='icon icon-great-people'></span>"},
         new String [] {"[ICON_STRENGTH]", "<span class='icon icon-defense'></span>"},
         new String [] {"[ICON_HAPPINESS_1]", "<span class='icon icon-happiness'></span>"},  // Note name difference
         new String [] {"[ICON_HAPPINESS_4]", "<span class='icon icon-unhappiness'></span>"},  // Note name difference
