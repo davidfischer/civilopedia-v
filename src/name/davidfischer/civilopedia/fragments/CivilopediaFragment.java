@@ -1,4 +1,4 @@
-package name.davidfischer.civilopedia.entries;
+package name.davidfischer.civilopedia.fragments;
 
 import android.app.Fragment;
 

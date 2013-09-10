@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import name.davidfischer.civilopedia.entries.CivilopediaFragment;
-import name.davidfischer.civilopedia.entries.TechnologiesFragment;
-import name.davidfischer.civilopedia.entries.UnitFragment;
+import name.davidfischer.civilopedia.fragments.CivilopediaFragment;
+import name.davidfischer.civilopedia.fragments.TechnologiesFragment;
+import name.davidfischer.civilopedia.fragments.UnitFragment;
 import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper;
 import android.app.Activity;
 import android.app.FragmentManager;

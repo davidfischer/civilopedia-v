@@ -1,4 +1,4 @@
-package name.davidfischer.civilopedia.entries;
+package name.davidfischer.civilopedia.fragments;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import name.davidfischer.civilopedia.CivilopediaActivity;
 import name.davidfischer.civilopedia.R;
 import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper;
-import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper.UnitEntry;
+import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper.TechnologyEntry;
 import name.davidfischer.civilopedia.helpers.CivilopediaHtmlHelper;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -18,14 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
-public class UnitFragment extends CivilopediaFragment {
-    private static final String TAG = UnitFragment.class.getName();
-    private static final String TYPE = "Units";
-    private static final String UNIT_TEMPLATE = "units.html";
+public class TechnologiesFragment extends CivilopediaFragment {
+    private static final String TAG = TechnologiesFragment.class.getName();
+    private static final String TYPE = "Technologies";
+    private static final String TECHNOLOGY_TEMPLATE = "technologies.html";
     private CivilopediaDatabaseHelper mDatabase = null;
-    private ArrayList<String> mUnitNames = null;
+    private ArrayList<String> mTechnologyNames = null;
 
-    public UnitFragment() {
+    public TechnologiesFragment() {
         // Empty ctor for fragments required
     }
 
@@ -37,7 +37,7 @@ public class UnitFragment extends CivilopediaFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadUnits();
+        loadTechnologies();
     }
 
     @Override
@@ -46,27 +46,27 @@ public class UnitFragment extends CivilopediaFragment {
 
         int index = getArguments().getInt(CivilopediaActivity.CATEGORY_SUBITEM);
         String html = "";
-        String unitName = mUnitNames.get(index);
-        getActivity().setTitle(unitName);
-        UnitEntry unit = mDatabase.getUnitByName(unitName);
+        String techName = mTechnologyNames.get(index);
+        getActivity().setTitle(techName);
+        TechnologyEntry tech = mDatabase.getTechnologyByName(techName);
 
         AssetManager manager = getActivity().getAssets();
         try {
-            InputStream stream = manager.open(UNIT_TEMPLATE);
+            InputStream stream = manager.open(TECHNOLOGY_TEMPLATE);
             byte [] buffer = new byte [stream.available()];
             stream.read(buffer);
             html = new String(buffer);
             stream.close();
         } catch (IOException e) {
-            Log.e(TAG, "Failed to load unit template: " + e.getLocalizedMessage());
+            Log.e(TAG, "Failed to load technology template: " + e.getLocalizedMessage());
         }
 
         HashMap<String, String> params = new HashMap<String, String>();
-        params.put("key", unit.getKey());
-        params.put("name", unit.getName());
-        params.put("strategy", unit.getStrategy());
-        params.put("help", unit.getHelp());
-        params.put("civilopedia", unit.getCivilopedia());
+        params.put("key", tech.getKey());
+        params.put("name", tech.getName());
+        params.put("quote", tech.getQuote());
+        params.put("help", tech.getHelp());
+        params.put("civilopedia", tech.getCivilopedia());
         layout.loadDataWithBaseURL("file:///android_asset/", CivilopediaHtmlHelper.format(html, params), "text/html", "utf-8", "");
 
         return layout;
@@ -91,10 +91,10 @@ public class UnitFragment extends CivilopediaFragment {
         return mDatabase;
     }
 
-    private void loadUnits() {
+    private void loadTechnologies() {
         databaseConnect();
-        if (null == mUnitNames) {
-            mUnitNames = mDatabase.getUnits();
+        if (null == mTechnologyNames) {
+            mTechnologyNames = mDatabase.getTechnologies();
         }
     }
 }
