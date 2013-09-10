@@ -1,0 +1,678 @@
+.ICON_BULLET {
+    background: transparent url(fonticons.png) -0px -0px no-repeat;
+}
+.ICON_RESEARCH {
+    background: transparent url(fonticons.png) -22px -0px no-repeat;
+}
+.ICON_GOLD {
+    background: transparent url(fonticons.png) -44px -0px no-repeat;
+}
+.ICON_PRODUCTION {
+    background: transparent url(fonticons.png) -66px -0px no-repeat;
+}
+.ICON_FOOD {
+    background: transparent url(fonticons.png) -88px -0px no-repeat;
+}
+.ICON_CULTURE {
+    background: transparent url(fonticons.png) -110px -0px no-repeat;
+}
+.ICON_MOVES {
+    background: transparent url(fonticons.png) -132px -0px no-repeat;
+}
+.ICON_ARROW_RIGHT {
+    background: transparent url(fonticons.png) -132px -0px no-repeat;
+}
+.ICON_RANGE_STRENGTH {
+    background: transparent url(fonticons.png) -154px -0px no-repeat;
+}
+.ICON_STRENGTH {
+    background: transparent url(fonticons.png) -176px -0px no-repeat;
+}
+.ICON_RES_IRON {
+    background: transparent url(fonticons.png) -198px -0px no-repeat;
+}
+.ICON_RES_HORSE {
+    background: transparent url(fonticons.png) -220px -0px no-repeat;
+}
+.ICON_RES_COAL {
+    background: transparent url(fonticons.png) -0px -22px no-repeat;
+}
+.ICON_RES_OIL {
+    background: transparent url(fonticons.png) -22px -22px no-repeat;
+}
+.ICON_RES_ALUMINUM {
+    background: transparent url(fonticons.png) -44px -22px no-repeat;
+}
+.ICON_RES_URANIUM {
+    background: transparent url(fonticons.png) -66px -22px no-repeat;
+}
+.ICON_RES_WHEAT {
+    background: transparent url(fonticons.png) -88px -22px no-repeat;
+}
+.ICON_RES_COW {
+    background: transparent url(fonticons.png) -110px -22px no-repeat;
+}
+.ICON_RES_DEER {
+    background: transparent url(fonticons.png) -132px -22px no-repeat;
+}
+.ICON_RES_FISH {
+    background: transparent url(fonticons.png) -154px -22px no-repeat;
+}
+.ICON_RES_WHALE {
+    background: transparent url(fonticons.png) -176px -22px no-repeat;
+}
+.ICON_RES_BANANA {
+    background: transparent url(fonticons.png) -198px -22px no-repeat;
+}
+.ICON_RES_GOLD {
+    background: transparent url(fonticons.png) -220px -22px no-repeat;
+}
+.ICON_RES_GEMS {
+    background: transparent url(fonticons.png) -0px -44px no-repeat;
+}
+.ICON_RES_MARBLE {
+    background: transparent url(fonticons.png) -22px -44px no-repeat;
+}
+.ICON_RES_IVORY {
+    background: transparent url(fonticons.png) -44px -44px no-repeat;
+}
+.ICON_RES_DYE {
+    background: transparent url(fonticons.png) -66px -44px no-repeat;
+}
+.ICON_RES_SPICES {
+    background: transparent url(fonticons.png) -88px -44px no-repeat;
+}
+.ICON_RES_SILK {
+    background: transparent url(fonticons.png) -110px -44px no-repeat;
+}
+.ICON_RES_SUGAR {
+    background: transparent url(fonticons.png) -132px -44px no-repeat;
+}
+.ICON_RES_COTTON {
+    background: transparent url(fonticons.png) -154px -44px no-repeat;
+}
+.ICON_HAPPINESS_1 {
+    background: transparent url(fonticons.png) -176px -44px no-repeat;
+}
+.ICON_HAPPINESS_2 {
+    background: transparent url(fonticons.png) -198px -44px no-repeat;
+}
+.ICON_HAPPINESS_3 {
+    background: transparent url(fonticons.png) -220px -44px no-repeat;
+}
+.ICON_HAPPINESS_4 {
+    background: transparent url(fonticons.png) -0px -66px no-repeat;
+}
+.ICON_GOLDEN_AGE {
+    background: transparent url(fonticons.png) -22px -66px no-repeat;
+}
+.ICON_PLUS {
+    background: transparent url(fonticons.png) -44px -66px no-repeat;
+}
+.ICON_MINUS {
+    background: transparent url(fonticons.png) -66px -66px no-repeat;
+}
+.ICON_WTF1 {
+    background: transparent url(fonticons.png) -88px -66px no-repeat;
+}
+.ICON_WTF2 {
+    background: transparent url(fonticons.png) -110px -66px no-repeat;
+}
+.ICON_RES_PEARLS {
+    background: transparent url(fonticons.png) -132px -66px no-repeat;
+}
+.ICON_RES_INCENSE {
+    background: transparent url(fonticons.png) -154px -66px no-repeat;
+}
+.ICON_RES_WINE {
+    background: transparent url(fonticons.png) -176px -66px no-repeat;
+}
+.ICON_RES_SILVER {
+    background: transparent url(fonticons.png) -198px -66px no-repeat;
+}
+.ICON_RES_FUR {
+    background: transparent url(fonticons.png) -220px -66px no-repeat;
+}
+.ICON_CITIZEN {
+    background: transparent url(fonticons.png) -0px -88px no-repeat;
+}
+.ICON_GREAT_PEOPLE {
+    background: transparent url(fonticons.png) -22px -88px no-repeat;
+}
+.ICON_RAZING {
+    background: transparent url(fonticons.png) -44px -88px no-repeat;
+}
+.ICON_RESISTANCE {
+    background: transparent url(fonticons.png) -66px -88px no-repeat;
+}
+.ICON_CONNECTED {
+    background: transparent url(fonticons.png) -88px -88px no-repeat;
+}
+.ICON_BLOCKADED {
+    background: transparent url(fonticons.png) -110px -88px no-repeat;
+}
+.ICON_PUPPET {
+    background: transparent url(fonticons.png) -132px -88px no-repeat;
+}
+.ICON_OCCUPIED {
+    background: transparent url(fonticons.png) -154px -88px no-repeat;
+}
+.ICON_INFLUENCE {
+    background: transparent url(fonticons.png) -176px -88px no-repeat;
+}
+.ICON_CAPITAL {
+    background: transparent url(fonticons.png) -198px -88px no-repeat;
+}
+.ICON_LOCKED {
+    background: transparent url(fonticons.png) -220px -88px no-repeat;
+}
+.ICON_RES_SHEEP {
+    background: transparent url(fonticons.png) -0px -110px no-repeat;
+}
+.ICON_WAR {
+    background: transparent url(fonticons.png) -22px -110px no-repeat;
+}
+.ICON_PEACE {
+    background: transparent url(fonticons.png) -44px -110px no-repeat;
+}
+.ICON_TRADE {
+    background: transparent url(fonticons.png) -66px -110px no-repeat;
+}
+.ICON_TRADE_WHITE {
+    background: transparent url(fonticons.png) -88px -110px no-repeat;
+}
+.ICON_TEAM_1 {
+    background: transparent url(fonticons.png) -110px -110px no-repeat;
+}
+.ICON_TEAM_2 {
+    background: transparent url(fonticons.png) -132px -110px no-repeat;
+}
+.ICON_TEAM_3 {
+    background: transparent url(fonticons.png) -154px -110px no-repeat;
+}
+.ICON_TEAM_4 {
+    background: transparent url(fonticons.png) -176px -110px no-repeat;
+}
+.ICON_TEAM_5 {
+    background: transparent url(fonticons.png) -198px -110px no-repeat;
+}
+.ICON_TEAM_6 {
+    background: transparent url(fonticons.png) -220px -110px no-repeat;
+}
+.ICON_TEAM_7 {
+    background: transparent url(fonticons.png) -0px -132px no-repeat;
+}
+.ICON_TEAM_8 {
+    background: transparent url(fonticons.png) -22px -132px no-repeat;
+}
+.ICON_TEAM_9 {
+    background: transparent url(fonticons.png) -44px -132px no-repeat;
+}
+.ICON_TEAM_10 {
+    background: transparent url(fonticons.png) -66px -132px no-repeat;
+}
+.ICON_TEAM_11 {
+    background: transparent url(fonticons.png) -88px -132px no-repeat;
+}
+.ICON_TEAM_USA {
+    background: transparent url(fonticons.png) -110px -132px no-repeat;
+}
+.ICON_PIRATE {
+    background: transparent url(fonticons.png) -132px -132px no-repeat;
+}
+.ICON_STAR {
+    background: transparent url(fonticons.png) -154px -132px no-repeat;
+}
+.ICON_MUSHROOM {
+    background: transparent url(fonticons.png) -176px -132px no-repeat;
+}
+.ICON_FLOWER {
+    background: transparent url(fonticons.png) -198px -132px no-repeat;
+}
+.ICON_ALPHA {
+    background: transparent url(fonticons.png) -220px -132px no-repeat;
+}
+.ICON_OMEGA {
+    background: transparent url(fonticons.png) -0px -154px no-repeat;
+}
+.ICON_CITY_STATE {
+    background: transparent url(fonticons.png) -22px -154px no-repeat;
+}
+.ICON_RES_STONE {
+    background: transparent url(fonticons.png) -44px -154px no-repeat;
+}
+.ICON_RES_CITRUS {
+    background: transparent url(fonticons.png) -66px -154px no-repeat;
+}
+.ICON_RES_COPPER {
+    background: transparent url(fonticons.png) -88px -154px no-repeat;
+}
+.ICON_RES_CRAB {
+    background: transparent url(fonticons.png) -110px -154px no-repeat;
+}
+.ICON_RES_SALT {
+    background: transparent url(fonticons.png) -132px -154px no-repeat;
+}
+.ICON_RES_TRUFFLES {
+    background: transparent url(fonticons.png) -154px -154px no-repeat;
+}
+.ICON_RES_JEWELRY {
+    background: transparent url(fonticons.png) -176px -154px no-repeat;
+}
+.ICON_RES_PORCELAIN {
+    background: transparent url(fonticons.png) -198px -154px no-repeat;
+}
+.ICON_RELIGION_BUDDHISM {
+    background: transparent url(fonticons.png) -220px -154px no-repeat;
+}
+.ICON_RELIGION_CHRISTIANITY {
+    background: transparent url(fonticons.png) -0px -176px no-repeat;
+}
+.ICON_RELIGION_CONFUCIANISM {
+    background: transparent url(fonticons.png) -22px -176px no-repeat;
+}
+.ICON_RELIGION_HINDUISM {
+    background: transparent url(fonticons.png) -44px -176px no-repeat;
+}
+.ICON_RELIGION_ISLAM {
+    background: transparent url(fonticons.png) -66px -176px no-repeat;
+}
+.ICON_RELIGION_JUDAISM {
+    background: transparent url(fonticons.png) -88px -176px no-repeat;
+}
+.ICON_RELIGION_PANTHEON {
+    background: transparent url(fonticons.png) -110px -176px no-repeat;
+}
+.ICON_RELIGION_SHINTO {
+    background: transparent url(fonticons.png) -132px -176px no-repeat;
+}
+.ICON_RELIGION_SIKHISM {
+    background: transparent url(fonticons.png) -154px -176px no-repeat;
+}
+.ICON_RELIGION_TAOISM {
+    background: transparent url(fonticons.png) -176px -176px no-repeat;
+}
+.ICON_RELIGION_TENGRIISM {
+    background: transparent url(fonticons.png) -198px -176px no-repeat;
+}
+.ICON_RELIGION_ZOROASTRIANISM {
+    background: transparent url(fonticons.png) -220px -176px no-repeat;
+}
+.ICON_RELIGION_ORTHODOX {
+    background: transparent url(fonticons.png) -0px -198px no-repeat;
+}
+.ICON_RELIGION_PROTESTANT {
+    background: transparent url(fonticons.png) -22px -198px no-repeat;
+}
+.ICON_RELIGION {
+    background: transparent url(fonticons.png) -44px -198px no-repeat;
+}
+.ICON_MISSIONARY {
+    background: transparent url(fonticons.png) -66px -198px no-repeat;
+}
+.ICON_PROPHET {
+    background: transparent url(fonticons.png) -88px -198px no-repeat;
+}
+.ICON_INQUISITOR {
+    background: transparent url(fonticons.png) -110px -198px no-repeat;
+}
+.ICON_SPY {
+    background: transparent url(fonticons.png) -132px -198px no-repeat;
+}
+.ICON_VIEW_CITY {
+    background: transparent url(fonticons.png) -154px -198px no-repeat;
+}
+.ICON_WORKER {
+    background: transparent url(fonticons.png) -176px -198px no-repeat;
+}
+.ICON_DENOUNCE {
+    background: transparent url(fonticons.png) -198px -198px no-repeat;
+}
+.ICON_INVEST {
+    background: transparent url(fonticons.png) -220px -198px no-repeat;
+}
+.ICON_SILVER_FIST {
+    background: transparent url(fonticons.png) -0px -220px no-repeat;
+}
+.ICON_CHECKBOX {
+    background: transparent url(fonticons.png) -22px -220px no-repeat;
+}
+.ICON_TOURISM {
+    background: transparent url(fonticons.png) -44px -220px no-repeat;
+}
+.ICON_INTERNATIONAL_TRADE {
+    background: transparent url(fonticons.png) -66px -220px no-repeat;
+}
+.ICON_GREAT_WORK {
+    background: transparent url(fonticons.png) -88px -220px no-repeat;
+}
+.ICON_ARROW_LEFT {
+    background: transparent url(fonticons.png) -110px -220px no-repeat;
+}
+.ICON_VICTORY_SPACE {
+    background: transparent url(fonticons.png) -132px -220px no-repeat;
+}
+.ICON_VICTORY_CULTURE {
+    background: transparent url(fonticons.png) -154px -220px no-repeat;
+}
+.ICON_VICTORY_DIPLOMACY {
+    background: transparent url(fonticons.png) -176px -220px no-repeat;
+}
+.ICON_VICTORY_DOMINATION {
+    background: transparent url(fonticons.png) -198px -220px no-repeat;
+}
+.ICON_TURNS_REMAINING {
+    background: transparent url(fonticons.png) -220px -220px no-repeat;
+}
+.ICON_GREAT_ENGINEER {
+    background: transparent url(fonticons_expansion2.png) -0px -0px no-repeat;
+}
+.ICON_GREAT_GENERAL {
+    background: transparent url(fonticons_expansion2.png) -22px -0px no-repeat;
+}
+.ICON_GREAT_SCIENTIST {
+    background: transparent url(fonticons_expansion2.png) -44px -0px no-repeat;
+}
+.ICON_GREAT_MERCHANT {
+    background: transparent url(fonticons_expansion2.png) -66px -0px no-repeat;
+}
+.ICON_GREAT_ARTIST {
+    background: transparent url(fonticons_expansion2.png) -88px -0px no-repeat;
+}
+.ICON_GREAT_MUSICIAN {
+    background: transparent url(fonticons_expansion2.png) -110px -0px no-repeat;
+}
+.ICON_GREAT_WRITER {
+    background: transparent url(fonticons_expansion2.png) -132px -0px no-repeat;
+}
+.ICON_GREAT_ADMIRAL {
+    background: transparent url(fonticons_expansion2.png) -154px -0px no-repeat;
+}
+.ICON_GREAT_MERCHANT_VENICE {
+    background: transparent url(fonticons_expansion2.png) -176px -0px no-repeat;
+}
+.ICON_GREAT_EXPLORER {
+    background: transparent url(fonticons_expansion2.png) -198px -0px no-repeat;
+}
+.ICON_RES_CLOVES {
+    background: transparent url(fonticons_expansion2.png) -220px -0px no-repeat;
+}
+.ICON_RES_NUTMEG {
+    background: transparent url(fonticons_expansion2.png) -0px -22px no-repeat;
+}
+.ICON_RES_PEPPER {
+    background: transparent url(fonticons_expansion2.png) -22px -22px no-repeat;
+}
+.ICON_DIPLOMAT {
+    background: transparent url(fonticons_expansion2.png) -44px -22px no-repeat;
+}
+.ICON_RES_ARTIFACTS {
+    background: transparent url(fonticons_expansion2.png) -66px -22px no-repeat;
+}
+.ICON_TROPHY_GOLD {
+    background: transparent url(fonticons_expansion2.png) -88px -22px no-repeat;
+}
+.ICON_TROPHY_SILVER {
+    background: transparent url(fonticons_expansion2.png) -110px -22px no-repeat;
+}
+.ICON_TROPHY_BRONZE {
+    background: transparent url(fonticons_expansion2.png) -132px -22px no-repeat;
+}
+.ICON_RES_MANPOWER {
+    background: transparent url(fonticons_expansion2.png) -154px -22px no-repeat;
+}
+.ICON_RES_HIDDEN_ARTIFACTS {
+    background: transparent url(fonticons_expansion2.png) -176px -22px no-repeat;
+}
+.ICON_IDEOLOGY_ORDER {
+    background: transparent url(fonticons_expansion2.png) -198px -22px no-repeat;
+}
+.ICON_IDEOLOGY_FREEDOM {
+    background: transparent url(fonticons_expansion2.png) -220px -22px no-repeat;
+}
+.ICON_IDEOLOGY_AUTOCRACY {
+    background: transparent url(fonticons_expansion2.png) -0px -44px no-repeat;
+}
+.TECH_AGRICULTURE {
+    background: transparent url(technologyatlas.png) -0px -0px no-repeat;
+}
+.TECH_POTTERY {
+    background: transparent url(technologyatlas.png) -1024px -0px no-repeat;
+}
+.TECH_ANIMAL_HUSBANDRY {
+    background: transparent url(technologyatlas.png) -512px -0px no-repeat;
+}
+.TECH_ARCHERY {
+    background: transparent url(technologyatlas.png) -1792px -0px no-repeat;
+}
+.TECH_MINING {
+    background: transparent url(technologyatlas.png) -256px -0px no-repeat;
+}
+.TECH_SAILING {
+    background: transparent url(technologyatlas.png) -1280px -256px no-repeat;
+}
+.TECH_CALENDAR {
+    background: transparent url(technologyatlas.png) -256px -256px no-repeat;
+}
+.TECH_WRITING {
+    background: transparent url(technologyatlas.png) -0px -256px no-repeat;
+}
+.TECH_TRAPPING {
+    background: transparent url(technologyatlastwo.png) -1280px -256px no-repeat;
+}
+.TECH_THE_WHEEL {
+    background: transparent url(technologyatlas.png) -768px -0px no-repeat;
+}
+.TECH_MASONRY {
+    background: transparent url(technologyatlas.png) -1536px -0px no-repeat;
+}
+.TECH_BRONZE_WORKING {
+    background: transparent url(technologyatlas.png) -1280px -0px no-repeat;
+}
+.TECH_OPTICS {
+    background: transparent url(technologyatlas.png) -512px -512px no-repeat;
+}
+.TECH_HORSEBACK_RIDING {
+    background: transparent url(technologyatlas.png) -768px -256px no-repeat;
+}
+.TECH_MATHEMATICS {
+    background: transparent url(technologyatlas.png) -1024px -256px no-repeat;
+}
+.TECH_CONSTRUCTION {
+    background: transparent url(technologyatlas.png) -1792px -256px no-repeat;
+}
+.TECH_PHILOSOPHY {
+    background: transparent url(technologyatlas.png) -0px -512px no-repeat;
+}
+.TECH_DRAMA {
+    background: transparent url(techportraits256_expansion.png) -0px -256px no-repeat;
+}
+.TECH_CURRENCY {
+    background: transparent url(technologyatlas.png) -256px -512px no-repeat;
+}
+.TECH_ENGINEERING {
+    background: transparent url(techatlas_shared256.png) -0px -0px no-repeat;
+}
+.TECH_IRON_WORKING {
+    background: transparent url(technologyatlas.png) -512px -256px no-repeat;
+}
+.TECH_THEOLOGY {
+    background: transparent url(technologyatlas.png) -1280px -512px no-repeat;
+}
+.TECH_CIVIL_SERVICE {
+    background: transparent url(technologyatlas.png) -1536px -512px no-repeat;
+}
+.TECH_GUILDS {
+    background: transparent url(techportraits256_expansion.png) -512px -0px no-repeat;
+}
+.TECH_METAL_CASTING {
+    background: transparent url(technologyatlas.png) -1536px -256px no-repeat;
+}
+.TECH_COMPASS {
+    background: transparent url(technologyatlas.png) -1792px -512px no-repeat;
+}
+.TECH_EDUCATION {
+    background: transparent url(technologyatlas.png) -256px -768px no-repeat;
+}
+.TECH_CHIVALRY {
+    background: transparent url(technologyatlas.png) -768px -768px no-repeat;
+}
+.TECH_MACHINERY {
+    background: transparent url(technologyatlas.png) -768px -512px no-repeat;
+}
+.TECH_PHYSICS {
+    background: transparent url(technologyatlas.png) -0px -768px no-repeat;
+}
+.TECH_STEEL {
+    background: transparent url(technologyatlas.png) -1024px -768px no-repeat;
+}
+.TECH_ASTRONOMY {
+    background: transparent url(technologyatlas.png) -512px -1024px no-repeat;
+}
+.TECH_ACOUSTICS {
+    background: transparent url(technologyatlastwo.png) -1536px -256px no-repeat;
+}
+.TECH_BANKING {
+    background: transparent url(technologyatlas.png) -1792px -768px no-repeat;
+}
+.TECH_PRINTING_PRESS {
+    background: transparent url(technologyatlas.png) -1536px -768px no-repeat;
+}
+.TECH_GUNPOWDER {
+    background: transparent url(technologyatlas.png) -0px -1024px no-repeat;
+}
+.TECH_NAVIGATION {
+    background: transparent url(technologyatlas.png) -1280px -768px no-repeat;
+}
+.TECH_ARCHITECTURE {
+    background: transparent url(techportraits256_expansion.png) -0px -0px no-repeat;
+}
+.TECH_ECONOMICS {
+    background: transparent url(technologyatlas.png) -768px -1024px no-repeat;
+}
+.TECH_METALLURGY {
+    background: transparent url(technologyatlas.png) -256px -1024px no-repeat;
+}
+.TECH_CHEMISTRY {
+    background: transparent url(technologyatlas.png) -1280px -1024px no-repeat;
+}
+.TECH_ARCHAEOLOGY {
+    background: transparent url(technologyatlas.png) -768px -1280px no-repeat;
+}
+.TECH_SCIENTIFIC_THEORY {
+    background: transparent url(technologyatlas.png) -1792px -1024px no-repeat;
+}
+.TECH_INDUSTRIALIZATION {
+    background: transparent url(techportraits256_expansion.png) -256px -256px no-repeat;
+}
+.TECH_RIFLING {
+    background: transparent url(technologyatlas.png) -0px -1280px no-repeat;
+}
+.TECH_MILITARY_SCIENCE {
+    background: transparent url(technologyatlas.png) -1024px -1024px no-repeat;
+}
+.TECH_FERTILIZER {
+    background: transparent url(technologyatlas.png) -256px -1280px no-repeat;
+}
+.TECH_BIOLOGY {
+    background: transparent url(technologyatlas.png) -1536px -1024px no-repeat;
+}
+.TECH_ELECTRICITY {
+    background: transparent url(technologyatlas.png) -1536px -1280px no-repeat;
+}
+.TECH_STEAM_POWER {
+    background: transparent url(technologyatlas.png) -512px -1280px no-repeat;
+}
+.TECH_DYNAMITE {
+    background: transparent url(technologyatlas.png) -1024px -1280px no-repeat;
+}
+.TECH_REFRIGERATION {
+    background: transparent url(technologyatlas.png) -512px -1536px no-repeat;
+}
+.TECH_RADIO {
+    background: transparent url(technologyatlas.png) -1792px -1536px no-repeat;
+}
+.TECH_REPLACEABLE_PARTS {
+    background: transparent url(technologyatlas.png) -256px -1536px no-repeat;
+}
+.TECH_FLIGHT {
+    background: transparent url(technologyatlas.png) -1280px -1536px no-repeat;
+}
+.TECH_RAILROAD {
+    background: transparent url(technologyatlas.png) -1280px -1280px no-repeat;
+}
+.TECH_PLASTIC {
+    background: transparent url(technologyatlas.png) -512px -1792px no-repeat;
+}
+.TECH_ELECTRONICS {
+    background: transparent url(technologyatlas.png) -1024px -1792px no-repeat;
+}
+.TECH_BALLISTICS {
+    background: transparent url(techportraits256_expansion.png) -256px -0px no-repeat;
+}
+.TECH_COMBUSTION {
+    background: transparent url(technologyatlas.png) -0px -1536px no-repeat;
+}
+.TECH_PENICILIN {
+    background: transparent url(technologyatlastwo.png) -1024px -256px no-repeat;
+}
+.TECH_ATOMIC_THEORY {
+    background: transparent url(technologyatlas.png) -1024px -1536px no-repeat;
+}
+.TECH_RADAR {
+    background: transparent url(technologyatlas.png) -256px -1792px no-repeat;
+}
+.TECH_COMBINED_ARMS {
+    background: transparent url(techportraits256_expansion.png) -768px -0px no-repeat;
+}
+.TECH_ECOLOGY {
+    background: transparent url(technologyatlastwo.png) -0px -0px no-repeat;
+}
+.TECH_NUCLEAR_FISSION {
+    background: transparent url(technologyatlas.png) -0px -1792px no-repeat;
+}
+.TECH_ROCKETRY {
+    background: transparent url(technologyatlas.png) -1280px -1792px no-repeat;
+}
+.TECH_COMPUTERS {
+    background: transparent url(technologyatlastwo.png) -256px -0px no-repeat;
+}
+.TECH_TELECOM {
+    background: transparent url(techportraits256_expansion.png) -768px -256px no-repeat;
+}
+.TECH_MOBILE_TACTICS {
+    background: transparent url(techportraits256_expansion.png) -512px -256px no-repeat;
+}
+.TECH_ADVANCED_BALLISTICS {
+    background: transparent url(technologyatlastwo.png) -768px -256px no-repeat;
+}
+.TECH_SATELLITES {
+    background: transparent url(technologyatlastwo.png) -512px -0px no-repeat;
+}
+.TECH_ROBOTICS {
+    background: transparent url(technologyatlastwo.png) -1280px -0px no-repeat;
+}
+.TECH_LASERS {
+    background: transparent url(technologyatlas.png) -1536px -1792px no-repeat;
+}
+.TECH_INTERNET {
+    background: transparent url(techportraits256_exp2.png) -0px -0px no-repeat;
+}
+.TECH_GLOBALIZATION {
+    background: transparent url(technologyatlastwo.png) -1024px -0px no-repeat;
+}
+.TECH_PARTICLE_PHYSICS {
+    background: transparent url(technologyatlastwo.png) -1792px -0px no-repeat;
+}
+.TECH_NUCLEAR_FUSION {
+    background: transparent url(technologyatlastwo.png) -256px -256px no-repeat;
+}
+.TECH_NANOTECHNOLOGY {
+    background: transparent url(technologyatlastwo.png) -0px -256px no-repeat;
+}
+.TECH_STEALTH {
+    background: transparent url(technologyatlastwo.png) -768px -0px no-repeat;
+}
+.TECH_FUTURE_TECH {
+    background: transparent url(technologyatlastwo.png) -512px -256px no-repeat;
+}
