@@ -22,6 +22,28 @@ INSERT_TECHNOLOGIES_SQL = '''
         (_id, name, civilopedia, help, quote, cost)
     VALUES(:_id, :name, :civilopedia, :help, :quote, :cost)
 '''
+CREATE_UNITS_SQL = '''
+    CREATE TABLE unit (
+        _id TEXT PRIMARY KEY,
+        name TEXT,
+        civilopedia TEXT,
+        help TEXT,
+        strategy TEXT,
+        cost INTEGER,
+        faith_cost INTEGER,
+        combat INTEGER,
+        ranged_combat INTEGER,
+        moves INTEGER,
+        range INTEGER
+    )
+'''
+INSERT_UNITS_SQL = '''
+    INSERT INTO unit
+        (_id, name, civilopedia, help, strategy, cost,
+         faith_cost, combat, ranged_combat, moves, range)
+    VALUES(:_id, :name, :civilopedia, :help, :strategy, :cost,
+           :faith_cost, :combat, :ranged_combat, :moves, :range)
+'''
 
 
 def write_database(filepath, data):
@@ -30,5 +52,9 @@ def write_database(filepath, data):
         db.conn.execute(SQL_CREATE_METADATA)
         db.conn.execute(SQL_METADATA_INSERT)
         db.conn.execute(CREATE_TECHNOLOGIES_SQL)
+        db.conn.execute(CREATE_UNITS_SQL)
+
         db.conn.executemany(INSERT_TECHNOLOGIES_SQL,
                             (d for d in data['technology']))
+        db.conn.executemany(INSERT_UNITS_SQL,
+                            (d for d in data['units']))

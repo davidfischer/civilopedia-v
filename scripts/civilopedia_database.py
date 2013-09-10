@@ -13,7 +13,7 @@ import os
 import civ5
 
 
-def create_database(db_dir, outdb='civilopedia.db'):
+def create_database(db_dir, outdb='assets/civilopedia.db'):
     data = {}
 
     # Initialize gamedata database
@@ -22,6 +22,9 @@ def create_database(db_dir, outdb='civilopedia.db'):
 
     print('Fetching technologies')
     data['technology'] = list(game_db.get_technologies())
+
+    print('Fetching units')
+    data['units'] = list(game_db.get_units())
 
     print('Writing database')
     if os.path.isfile(outdb):
