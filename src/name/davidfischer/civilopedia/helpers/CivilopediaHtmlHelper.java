@@ -12,7 +12,8 @@ public final class CivilopediaHtmlHelper {
     private static final String [][] REPLACEMENTS = new String [][] {
         new String [] {"[TAB]", ""},
         new String [] {"[NEWLINE]", "<br />"},
-        new String [] {"[COLOR_POSITIVE_TEXT]", "<em class='positive-text'>"},
+        new String [] {"[COLOR_POSITIVE_TEXT]", "<em class='COLOR_POSITIVE_TEXT'>"},
+        new String [] {"[COLOR_CYAN]", "<em class='COLOR_CYAN'>"},
         new String [] {"[ENDCOLOR]", "</em>"},
     };
 

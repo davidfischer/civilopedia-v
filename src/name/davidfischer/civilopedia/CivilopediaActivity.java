@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import name.davidfischer.civilopedia.entries.CivilopediaFragment;
 import name.davidfischer.civilopedia.entries.TechnologiesFragment;
+import name.davidfischer.civilopedia.entries.UnitFragment;
 import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper;
 import android.app.Activity;
 import android.app.FragmentManager;
@@ -31,6 +32,7 @@ public class CivilopediaActivity extends Activity {
 
     // Must match strings.xml
     private static final String TECHNOLOGIES = "TECHNOLOGIES";
+    private static final String UNITS = "UNITS";
 
     private DrawerLayout mDrawerLayout;
     private ExpandableListView mDrawerList;
@@ -153,6 +155,8 @@ public class CivilopediaActivity extends Activity {
 
         if (name.equalsIgnoreCase(TECHNOLOGIES)) {
             fragment = new TechnologiesFragment();
+        } else if (name.equalsIgnoreCase(UNITS)) {
+            fragment = new UnitFragment();
         }
 
         return fragment;
@@ -176,6 +180,8 @@ public class CivilopediaActivity extends Activity {
         for (int i = 0; i < mCategoryNames.length; i += 1) {
             if (mCategoryNames[i].equalsIgnoreCase(TECHNOLOGIES)) {
                 subcategories = mDatabase.getTechnologies();
+            } else if (mCategoryNames[i].equalsIgnoreCase(UNITS)) {
+                subcategories = mDatabase.getUnits();
             } else {
                 Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
                 subcategories = new ArrayList<String>();

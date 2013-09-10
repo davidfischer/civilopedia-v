@@ -13,7 +13,7 @@ h2 {
   width: 22px;
   height: 22px;
 }
-.technology {
+.technology, .unit {
   margin-left: auto;
   margin-right: auto;
   height: 256px;
