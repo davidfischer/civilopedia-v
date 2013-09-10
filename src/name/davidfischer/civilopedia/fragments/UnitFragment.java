@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 import name.davidfischer.civilopedia.CivilopediaActivity;
 import name.davidfischer.civilopedia.R;
+import name.davidfischer.civilopedia.entries.UnitEntry;
 import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper;
-import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper.UnitEntry;
 import name.davidfischer.civilopedia.helpers.CivilopediaHtmlHelper;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -48,7 +48,7 @@ public class UnitFragment extends CivilopediaFragment {
         String html = "";
         String unitName = mUnitNames.get(index);
         getActivity().setTitle(unitName);
-        UnitEntry unit = mDatabase.getUnitByName(unitName);
+        UnitEntry unit = UnitEntry.getUnitByName(getActivity(), unitName);
 
         AssetManager manager = getActivity().getAssets();
         try {
@@ -94,7 +94,7 @@ public class UnitFragment extends CivilopediaFragment {
     private void loadUnits() {
         databaseConnect();
         if (null == mUnitNames) {
-            mUnitNames = mDatabase.getUnits();
+            mUnitNames = UnitEntry.getUnits(getActivity());
         }
     }
 }

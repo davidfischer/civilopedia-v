@@ -7,8 +7,7 @@ import java.util.HashMap;
 
 import name.davidfischer.civilopedia.CivilopediaActivity;
 import name.davidfischer.civilopedia.R;
-import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper;
-import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper.TechnologyEntry;
+import name.davidfischer.civilopedia.entries.TechnologyEntry;
 import name.davidfischer.civilopedia.helpers.CivilopediaHtmlHelper;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -22,7 +21,6 @@ public class TechnologiesFragment extends CivilopediaFragment {
     private static final String TAG = TechnologiesFragment.class.getName();
     private static final String TYPE = "Technologies";
     private static final String TECHNOLOGY_TEMPLATE = "technologies.html";
-    private CivilopediaDatabaseHelper mDatabase = null;
     private ArrayList<String> mTechnologyNames = null;
 
     public TechnologiesFragment() {
@@ -48,7 +46,7 @@ public class TechnologiesFragment extends CivilopediaFragment {
         String html = "";
         String techName = mTechnologyNames.get(index);
         getActivity().setTitle(techName);
-        TechnologyEntry tech = mDatabase.getTechnologyByName(techName);
+        TechnologyEntry tech = TechnologyEntry.getTechnologyByName(getActivity(), techName);
 
         AssetManager manager = getActivity().getAssets();
         try {
@@ -75,26 +73,11 @@ public class TechnologiesFragment extends CivilopediaFragment {
     @Override
     public void onPause() {
         super.onPause();
-        if (null != mDatabase) {
-            mDatabase.close();
-        }
-    }
-
-    public CivilopediaDatabaseHelper databaseConnect() {
-        if (null == mDatabase) {
-            try {
-                mDatabase = new CivilopediaDatabaseHelper(getActivity());
-            } catch (IOException e) {
-                Log.e(TAG, e.getLocalizedMessage());
-            }
-        }
-        return mDatabase;
     }
 
     private void loadTechnologies() {
-        databaseConnect();
         if (null == mTechnologyNames) {
-            mTechnologyNames = mDatabase.getTechnologies();
+            mTechnologyNames = TechnologyEntry.getTechnologies(getActivity());
         }
     }
 }

@@ -1,13 +1,13 @@
 package name.davidfischer.civilopedia;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import name.davidfischer.civilopedia.entries.TechnologyEntry;
+import name.davidfischer.civilopedia.entries.UnitEntry;
 import name.davidfischer.civilopedia.fragments.CivilopediaFragment;
 import name.davidfischer.civilopedia.fragments.TechnologiesFragment;
 import name.davidfischer.civilopedia.fragments.UnitFragment;
-import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -41,19 +41,12 @@ public class CivilopediaActivity extends Activity {
     private String [] mCategoryNames;
     private ArrayList<HashMap<String, String>> mCategoryList;
     private ArrayList<ArrayList<HashMap<String, String>>> mSubcategoryList;
-    private CivilopediaDatabaseHelper mDatabase;
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        try {
-            mDatabase = new CivilopediaDatabaseHelper(this);
-        } catch (IOException e) {
-            Log.e(TAG, "Failed to connect to database: " + e.getLocalizedMessage());
-        }
 
         mCategoryNames = getResources().getStringArray(R.array.civ_categories);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -179,9 +172,9 @@ public class CivilopediaActivity extends Activity {
 
         for (int i = 0; i < mCategoryNames.length; i += 1) {
             if (mCategoryNames[i].equalsIgnoreCase(TECHNOLOGIES)) {
-                subcategories = mDatabase.getTechnologies();
+                subcategories = TechnologyEntry.getTechnologies(this);
             } else if (mCategoryNames[i].equalsIgnoreCase(UNITS)) {
-                subcategories = mDatabase.getUnits();
+                subcategories = UnitEntry.getUnits(this);
             } else {
                 Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
                 subcategories = new ArrayList<String>();
@@ -200,26 +193,11 @@ public class CivilopediaActivity extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        // Since the database is closed and cleaned up on pause,
-        //  the connection must be remade when the activity is resumed
-        if (null == mDatabase) {
-            try {
-                mDatabase = new CivilopediaDatabaseHelper(this);
-            } catch (IOException e) {
-                Log.e(TAG, "Failed to connect to database " + e.getLocalizedMessage());
-            }
-
-        }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        // Close and cleanup database connection
-        if (null != mDatabase) {
-            mDatabase.close();
-            mDatabase = null;
-        }
     }
 
     @Override
