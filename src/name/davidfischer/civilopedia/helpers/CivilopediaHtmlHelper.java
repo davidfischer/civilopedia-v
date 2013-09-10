@@ -58,13 +58,14 @@ public final class CivilopediaHtmlHelper {
         //  to maintain.
         String [] searchList = new String [REPLACEMENTS.length];
         String [] replacementList = new String [REPLACEMENTS.length];
+        String result = html;
 
         // Replace icons
-        html = html.replaceAll(Pattern.quote("[") + "(ICON_[A-Z0-9_]+)" + Pattern.quote("]"), "<span class='icon $1'></span>");
+        result = result.replaceAll(Pattern.quote("[") + "(ICON_[A-Z0-9_]+)" + Pattern.quote("]"), "<span class='icon $1'></span>");
         for (int i = 0; i < CivilopediaHtmlHelper.REPLACEMENTS.length; i += 1) {
             searchList[i] = CivilopediaHtmlHelper.REPLACEMENTS[i][0];
             replacementList[i] = CivilopediaHtmlHelper.REPLACEMENTS[i][1];
         }
-        return StringUtils.replaceEach(html, searchList, replacementList);
+        return StringUtils.replaceEach(result, searchList, replacementList);
     }
 }
