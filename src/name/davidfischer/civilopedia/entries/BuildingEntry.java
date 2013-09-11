@@ -161,7 +161,7 @@ public class BuildingEntry extends CivilopediaEntry {
                 building.setMaintenance(cursor.getInt(7));
             }
         } catch (IOException e) {
-            Log.e(TAG, "Failed to get technology (" + buildingName + "): " + e.getLocalizedMessage());
+            Log.e(TAG, "Failed to get building (" + buildingName + "): " + e.getLocalizedMessage());
         } finally {
             if (null != cursor) {
                 cursor.close();
