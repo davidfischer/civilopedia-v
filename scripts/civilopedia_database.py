@@ -26,6 +26,12 @@ def create_database(db_dir, outdb='assets/civilopedia.db'):
     print('Fetching units')
     data['units'] = list(game_db.get_units())
 
+    print('Fetching buildings')
+    data['buildings'] = list(game_db.get_buildings())
+
+    print('Fetching wonders')
+    data['wonders'] = list(game_db.get_wonders())
+
     print('Writing database')
     if os.path.isfile(outdb):
         print('Removing existing database first')

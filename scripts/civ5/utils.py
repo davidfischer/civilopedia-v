@@ -44,17 +44,64 @@ INSERT_UNITS_SQL = '''
     VALUES(:_id, :name, :civilopedia, :help, :strategy, :cost,
            :faith_cost, :combat, :ranged_combat, :moves, :range)
 '''
+CREATE_BUILDINGS_SQL = '''
+    CREATE TABLE building (
+        _id TEXT PRIMARY KEY,
+        name TEXT,
+        civilopedia TEXT,
+        help TEXT,
+        strategy TEXT,
+        cost INTEGER,
+        faith_cost INTEGER,
+        maintenance INTEGER
+    )
+'''
+INSERT_BUILDINGS_SQL = '''
+    INSERT INTO building
+        (_id, name, civilopedia, help, strategy, cost,
+         faith_cost, maintenance)
+    VALUES(:_id, :name, :civilopedia, :help, :strategy, :cost,
+           :faith_cost, :maintenance)
+'''
+CREATE_WONDERS_SQL = '''
+    CREATE TABLE wonder (
+        _id TEXT PRIMARY KEY,
+        name TEXT,
+        civilopedia TEXT,
+        help TEXT,
+        strategy TEXT,
+        quote TEXT,
+        cost INTEGER
+    )
+'''
+INSERT_WONDERS_SQL = '''
+    INSERT INTO wonder
+        (_id, name, civilopedia, help, strategy, quote, cost)
+    VALUES(:_id, :name, :civilopedia, :help, :strategy, :quote, :cost)
+'''
+
+CREATE_SQLS = (
+    SQL_CREATE_METADATA,
+    CREATE_TECHNOLOGIES_SQL,
+    CREATE_UNITS_SQL,
+    CREATE_BUILDINGS_SQL,
+    CREATE_WONDERS_SQL,
+)
 
 
 def write_database(filepath, data):
     db = DatabaseAdapter(filepath)
     with db.conn:
-        db.conn.execute(SQL_CREATE_METADATA)
+        for sql in CREATE_SQLS:
+            db.conn.execute(sql)
+
         db.conn.execute(SQL_METADATA_INSERT)
-        db.conn.execute(CREATE_TECHNOLOGIES_SQL)
-        db.conn.execute(CREATE_UNITS_SQL)
 
         db.conn.executemany(INSERT_TECHNOLOGIES_SQL,
                             (d for d in data['technology']))
         db.conn.executemany(INSERT_UNITS_SQL,
                             (d for d in data['units']))
+        db.conn.executemany(INSERT_BUILDINGS_SQL,
+                            (d for d in data['buildings']))
+        db.conn.executemany(INSERT_WONDERS_SQL,
+                            (d for d in data['wonders']))

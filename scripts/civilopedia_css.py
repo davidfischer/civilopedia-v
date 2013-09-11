@@ -55,9 +55,24 @@ UNIT_ICONS_SQL = '''
   ORDER BY Cost;
 '''
 
+# Includes wonders!
+BUILDINGS_ICONS_SQL = '''
+  SELECT
+    Type AS "key",
+    PortraitIndex AS "position",
+    LOWER(Filename) AS "filename",
+    IconsPerRow
+  FROM Buildings
+    INNER JOIN IconTextureAtlases
+      ON Atlas = IconAtlas
+  WHERE IconSize = 256
+  ORDER BY Cost;
+'''
+
 ICONS_SQL_LIST = (
     TECHNOLOGY_ICONS_SQL,
     UNIT_ICONS_SQL,
+    BUILDINGS_ICONS_SQL,
 )
 
 def create_css(db_dir, outfile='assets/civilopedia_v.css'):
