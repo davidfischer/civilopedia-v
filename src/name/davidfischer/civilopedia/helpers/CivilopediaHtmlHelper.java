@@ -60,6 +60,10 @@ public final class CivilopediaHtmlHelper {
         String [] replacementList = new String [REPLACEMENTS.length];
         String result = html;
 
+        if (null == html) {
+            return "";
+        }
+
         // Replace icons
         result = result.replaceAll(Pattern.quote("[") + "(ICON_[A-Z0-9_]+)" + Pattern.quote("]"), "<span class='icon $1'></span>");
         for (int i = 0; i < CivilopediaHtmlHelper.REPLACEMENTS.length; i += 1) {

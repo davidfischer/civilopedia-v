@@ -1121,3 +1121,420 @@
 .UNIT_NUCLEAR_MISSILE {
     background: transparent url(unitportraitsrenaissanceindustrial.png) -768px -1024px no-repeat;
 }
+.BUILDING_MONASTERY {
+    background: transparent url(buildingatlas.png) -1536px -1024px no-repeat;
+}
+.BUILDING_CATHEDRAL {
+    background: transparent url(buildingportraits256_expansion.png) -512px -0px no-repeat;
+}
+.BUILDING_MOSQUE {
+    background: transparent url(buildingportraits256_expansion.png) -0px -256px no-repeat;
+}
+.BUILDING_PAGODA {
+    background: transparent url(buildingportraits256_expansion.png) -256px -256px no-repeat;
+}
+.BUILDING_INTERNATIONAL_SPACE_STATION {
+    background: transparent url(wonderportraits256_exp2.png) -768px -256px no-repeat;
+}
+.BUILDING_PALACE {
+    background: transparent url(buildingatlas.png) -768px -512px no-repeat;
+}
+.BUILDING_MONUMENT {
+    background: transparent url(buildingatlas.png) -1280px -512px no-repeat;
+}
+.BUILDING_MAYA_PYRAMID {
+    background: transparent url(buildingportraits256_expansion.png) -512px -256px no-repeat;
+}
+.BUILDING_SHRINE {
+    background: transparent url(buildingportraits256_expansion.png) -1024px -256px no-repeat;
+}
+.BUILDING_STELE {
+    background: transparent url(buildingportraits256_expansion.png) -0px -512px no-repeat;
+}
+.BUILDING_GRANARY {
+    background: transparent url(buildingatlas.png) -0px -0px no-repeat;
+}
+.BUILDING_WALLS_OF_BABYLON {
+    background: transparent url(buildingatlas256_dlc_d.png) -0px -0px no-repeat;
+}
+.BUILDING_FLOATING_GARDENS {
+    background: transparent url(buildingatlas.png) -512px -1792px no-repeat;
+}
+.BUILDING_KREPOST {
+    background: transparent url(buildingatlas.png) -1280px -1792px no-repeat;
+}
+.BUILDING_PAPER_MAKER {
+    background: transparent url(buildingatlas.png) -768px -1792px no-repeat;
+}
+.BUILDING_WATERMILL {
+    background: transparent url(buildingatlas.png) -1280px -768px no-repeat;
+}
+.BUILDING_CIRCUS {
+    background: transparent url(buildingatlas.png) -1024px -1280px no-repeat;
+}
+.BUILDING_LIGHTHOUSE {
+    background: transparent url(buildingatlas.png) -1024px -1024px no-repeat;
+}
+.BUILDING_BARRACKS {
+    background: transparent url(buildingatlas.png) -1280px -0px no-repeat;
+}
+.BUILDING_WALLS {
+    background: transparent url(buildingatlas.png) -0px -1024px no-repeat;
+}
+.BUILDING_LIBRARY {
+    background: transparent url(buildingatlas.png) -768px -256px no-repeat;
+}
+.BUILDING_STONE_WORKS {
+    background: transparent url(building_aqueduct256.png) -256px -0px no-repeat;
+}
+.BUILDING_IKANDA {
+    background: transparent url(buildingportraits256_exp2.png) -512px -0px no-repeat;
+}
+.BUILDING_DUCAL_STABLE {
+    background: transparent url(buildingportraits256_exp2.png) -256px -0px no-repeat;
+}
+.BUILDING_ROYAL_LIBRARY {
+    background: transparent url(buildingportraits256_exp2.png) -768px -0px no-repeat;
+}
+.BUILDING_COURTHOUSE {
+    background: transparent url(buildingatlas.png) -1792px -1792px no-repeat;
+}
+.BUILDING_LONGHOUSE {
+    background: transparent url(buildingatlas.png) -256px -1792px no-repeat;
+}
+.BUILDING_BAZAAR {
+    background: transparent url(buildingatlas.png) -512px -1536px no-repeat;
+}
+.BUILDING_MUD_PYRAMID_MOSQUE {
+    background: transparent url(buildingatlas.png) -1024px -1792px no-repeat;
+}
+.BUILDING_BURIAL_TOMB {
+    background: transparent url(buildingatlas.png) -1792px -1536px no-repeat;
+}
+.BUILDING_STABLE {
+    background: transparent url(buildingatlas.png) -1792px -0px no-repeat;
+}
+.BUILDING_MINT {
+    background: transparent url(buildingatlas.png) -512px -1024px no-repeat;
+}
+.BUILDING_COLOSSEUM {
+    background: transparent url(buildingatlas.png) -1792px -512px no-repeat;
+}
+.BUILDING_TEMPLE {
+    background: transparent url(buildingatlas.png) -1280px -1024px no-repeat;
+}
+.BUILDING_MARKET {
+    background: transparent url(buildingatlas.png) -0px -512px no-repeat;
+}
+.BUILDING_AQUEDUCT {
+    background: transparent url(building_aqueduct256.png) -0px -0px no-repeat;
+}
+.BUILDING_AMPHITHEATER {
+    background: transparent url(buildingportraits256_expansion.png) -0px -0px no-repeat;
+}
+.BUILDING_WRITERS_GUILD {
+    background: transparent url(buildingportraits256_exp2.png) -768px -256px no-repeat;
+}
+.BUILDING_FORGE {
+    background: transparent url(buildingatlas.png) -512px -0px no-repeat;
+}
+.BUILDING_GARDEN {
+    background: transparent url(buildingatlas.png) -0px -768px no-repeat;
+}
+.BUILDING_HARBOR {
+    background: transparent url(buildingatlas.png) -512px -768px no-repeat;
+}
+.BUILDING_WORKSHOP {
+    background: transparent url(buildingatlas.png) -1024px -768px no-repeat;
+}
+.BUILDING_CANDI {
+    background: transparent url(buildingportraits256_exp2.png) -0px -0px no-repeat;
+}
+.BUILDING_CARAVANSARY {
+    background: transparent url(buildingportraits256_exp2.png) -0px -512px no-repeat;
+}
+.BUILDING_HEROIC_EPIC {
+    background: transparent url(wonderatlas.png) -1792px -768px no-repeat;
+}
+.BUILDING_NATIONAL_COLLEGE {
+    background: transparent url(buildingatlas.png) -1536px -1280px no-repeat;
+}
+.BUILDING_NATIONAL_EPIC {
+    background: transparent url(wonderatlas.png) -0px -1024px no-repeat;
+}
+.BUILDING_CIRCUS_MAXIMUS {
+    background: transparent url(nationalwonders256_dec2010patch.png) -0px -0px no-repeat;
+}
+.BUILDING_NATIONAL_TREASURY {
+    background: transparent url(wonderportraits256_exp2.png) -0px -0px no-repeat;
+}
+.BUILDING_IRONWORKS {
+    background: transparent url(buildingatlas.png) -1792px -1280px no-repeat;
+}
+.BUILDING_OXFORD_UNIVERSITY {
+    background: transparent url(wonderatlas.png) -1024px -1280px no-repeat;
+}
+.BUILDING_HERMITAGE {
+    background: transparent url(buildingatlas.png) -1024px -1536px no-repeat;
+}
+.BUILDING_INTELLIGENCE_AGENCY {
+    background: transparent url(wonderportraits256_expansion.png) -512px -512px no-repeat;
+}
+.BUILDING_GRAND_TEMPLE {
+    background: transparent url(nationalwonder_grandtemple256_expansion.png) -0px -0px no-repeat;
+}
+.BUILDING_MUGHAL_FORT {
+    background: transparent url(buildingatlas.png) -1792px -1024px no-repeat;
+}
+.BUILDING_ARTISTS_GUILD {
+    background: transparent url(buildingportraits256_exp2.png) -256px -256px no-repeat;
+}
+.BUILDING_WAT {
+    background: transparent url(buildingatlas.png) -768px -1536px no-repeat;
+}
+.BUILDING_ARMORY {
+    background: transparent url(buildingatlas.png) -1536px -0px no-repeat;
+}
+.BUILDING_CASTLE {
+    background: transparent url(buildingatlas.png) -256px -1024px no-repeat;
+}
+.BUILDING_UNIVERSITY {
+    background: transparent url(buildingatlas.png) -1280px -256px no-repeat;
+}
+.BUILDING_CONSTABLE {
+    background: transparent url(buildingportraits256_expansion.png) -512px -512px no-repeat;
+}
+.BUILDING_GREAT_LIGHTHOUSE {
+    background: transparent url(wonderatlas.png) -1280px -0px no-repeat;
+}
+.BUILDING_STONEHENGE {
+    background: transparent url(wonderatlas.png) -512px -0px no-repeat;
+}
+.BUILDING_GREAT_LIBRARY {
+    background: transparent url(wonderatlas.png) -256px -0px no-repeat;
+}
+.BUILDING_PYRAMID {
+    background: transparent url(wonderatlas.png) -0px -0px no-repeat;
+}
+.BUILDING_COLOSSUS {
+    background: transparent url(wonderatlas.png) -1024px -0px no-repeat;
+}
+.BUILDING_STATUE_ZEUS {
+    background: transparent url(wonderatlas256_dlc_wonderpack.png) -0px -256px no-repeat;
+}
+.BUILDING_TEMPLE_ARTEMIS {
+    background: transparent url(wonderatlas256_dlc_wonderpack.png) -0px -0px no-repeat;
+}
+.BUILDING_MAUSOLEUM_HALICARNASSUS {
+    background: transparent url(wonderatlas256_dlc_wonderpack.png) -256px -0px no-repeat;
+}
+.BUILDING_SATRAPS_COURT {
+    background: transparent url(buildingatlas.png) -1280px -1536px no-repeat;
+}
+.BUILDING_OBSERVATORY {
+    background: transparent url(buildingatlas.png) -512px -1280px no-repeat;
+}
+.BUILDING_THEATRE {
+    background: transparent url(buildingportraits2_256_exp2.png) -0px -0px no-repeat;
+}
+.BUILDING_OPERA_HOUSE {
+    background: transparent url(buildingatlas.png) -256px -1536px no-repeat;
+}
+.BUILDING_BANK {
+    background: transparent url(buildingatlas.png) -512px -512px no-repeat;
+}
+.BUILDING_CEILIDH_HALL {
+    background: transparent url(buildingportraits256_expansion.png) -768px -0px no-repeat;
+}
+.BUILDING_MUSICIANS_GUILD {
+    background: transparent url(buildingportraits256_exp2.png) -512px -256px no-repeat;
+}
+.BUILDING_SEAPORT {
+    background: transparent url(buildingatlas.png) -0px -1536px no-repeat;
+}
+.BUILDING_WINDMILL {
+    background: transparent url(buildingatlas.png) -256px -0px no-repeat;
+}
+.BUILDING_ORACLE {
+    background: transparent url(wonderatlas.png) -1536px -0px no-repeat;
+}
+.BUILDING_HANGING_GARDEN {
+    background: transparent url(wonderatlas.png) -768px -0px no-repeat;
+}
+.BUILDING_GREAT_WALL {
+    background: transparent url(wonderatlas.png) -1792px -0px no-repeat;
+}
+.BUILDING_COFFEE_HOUSE {
+    background: transparent url(buildingportraits256_expansion.png) -1024px -0px no-repeat;
+}
+.BUILDING_PETRA {
+    background: transparent url(wonderportraits256_expansion.png) -256px -256px no-repeat;
+}
+.BUILDING_TERRACOTTA_ARMY {
+    background: transparent url(wonderportraits256_expansion.png) -512px -256px no-repeat;
+}
+.BUILDING_PARTHENON {
+    background: transparent url(wonderportraits256_exp2.png) -0px -512px no-repeat;
+}
+.BUILDING_MUSEUM {
+    background: transparent url(buildingatlas.png) -1536px -512px no-repeat;
+}
+.BUILDING_MILITARY_ACADEMY {
+    background: transparent url(buildingatlas.png) -0px -256px no-repeat;
+}
+.BUILDING_ARSENAL {
+    background: transparent url(buildingatlas.png) -256px -256px no-repeat;
+}
+.BUILDING_PUBLIC_SCHOOL {
+    background: transparent url(buildingatlas.png) -1536px -256px no-repeat;
+}
+.BUILDING_HAGIA_SOPHIA {
+    background: transparent url(wonderatlas.png) -0px -256px no-repeat;
+}
+.BUILDING_CHICHEN_ITZA {
+    background: transparent url(wonderatlas.png) -1024px -256px no-repeat;
+}
+.BUILDING_MACHU_PICHU {
+    background: transparent url(wonderatlas.png) -768px -256px no-repeat;
+}
+.BUILDING_BOMB_SHELTER {
+    background: transparent url(buildingportraits256_expansion.png) -256px -0px no-repeat;
+}
+.BUILDING_POLICE_STATION {
+    background: transparent url(buildingportraits256_expansion.png) -256px -512px no-repeat;
+}
+.BUILDING_MOSQUE_OF_DJENNE {
+    background: transparent url(wonderportraits256_expansion.png) -512px -0px no-repeat;
+}
+.BUILDING_HOTEL {
+    background: transparent url(buildingportraits256_exp2.png) -256px -512px no-repeat;
+}
+.BUILDING_BOROBUDUR {
+    background: transparent url(wonderportraits256_exp2.png) -0px -256px no-repeat;
+}
+.BUILDING_HYDRO_PLANT {
+    background: transparent url(buildingatlas.png) -1536px -768px no-repeat;
+}
+.BUILDING_HOSPITAL {
+    background: transparent url(buildingatlas.png) -1280px -1280px no-repeat;
+}
+.BUILDING_FACTORY {
+    background: transparent url(buildingatlas.png) -768px -0px no-repeat;
+}
+.BUILDING_SPACESHIP_FACTORY {
+    background: transparent url(buildingatlas.png) -1536px -1536px no-repeat;
+}
+.BUILDING_STOCK_EXCHANGE {
+    background: transparent url(buildingatlas.png) -0px -1792px no-repeat;
+}
+.BUILDING_ANGKOR_WAT {
+    background: transparent url(wonderatlas.png) -256px -256px no-repeat;
+}
+.BUILDING_NOTRE_DAME {
+    background: transparent url(wonderatlas.png) -512px -256px no-repeat;
+}
+.BUILDING_ALHAMBRA {
+    background: transparent url(wonderportraits256_expansion.png) -0px -0px no-repeat;
+}
+.BUILDING_TOURIST_CENTER {
+    background: transparent url(wonderportraits256_exp2.png) -256px -0px no-repeat;
+}
+.BUILDING_AIRPORT {
+    background: transparent url(buildingportraits256_exp2.png) -0px -256px no-repeat;
+}
+.BUILDING_SOLAR_PLANT {
+    background: transparent url(buildingatlas.png) -1792px -768px no-repeat;
+}
+.BUILDING_STADIUM {
+    background: transparent url(buildingatlas.png) -256px -768px no-repeat;
+}
+.BUILDING_BROADCAST_TOWER {
+    background: transparent url(buildingatlas.png) -768px -1024px no-repeat;
+}
+.BUILDING_MILITARY_BASE {
+    background: transparent url(buildingatlas.png) -512px -256px no-repeat;
+}
+.BUILDING_MEDICAL_LAB {
+    background: transparent url(buildingatlas.png) -1536px -1792px no-repeat;
+}
+.BUILDING_NUCLEAR_PLANT {
+    background: transparent url(buildingatlas.png) -768px -1280px no-repeat;
+}
+.BUILDING_LABORATORY {
+    background: transparent url(buildingatlas.png) -1792px -256px no-repeat;
+}
+.BUILDING_HIMEJI_CASTLE {
+    background: transparent url(wonderatlas.png) -1792px -256px no-repeat;
+}
+.BUILDING_SISTINE_CHAPEL {
+    background: transparent url(wonderatlas.png) -256px -512px no-repeat;
+}
+.BUILDING_FORBIDDEN_PALACE {
+    background: transparent url(wonderatlas.png) -1536px -256px no-repeat;
+}
+.BUILDING_RECYCLING_CENTER {
+    background: transparent url(buildingportraits256_expansion.png) -768px -256px no-repeat;
+}
+.BUILDING_LEANING_TOWER {
+    background: transparent url(wonderportraits256_expansion.png) -1024px -0px no-repeat;
+}
+.BUILDING_GLOBE_THEATER {
+    background: transparent url(wonderportraits256_exp2.png) -512px -256px no-repeat;
+}
+.BUILDING_PORCELAIN_TOWER {
+    background: transparent url(wonderatlas.png) -0px -512px no-repeat;
+}
+.BUILDING_TAJ_MAHAL {
+    background: transparent url(wonderatlas.png) -512px -512px no-repeat;
+}
+.BUILDING_UFFIZI {
+    background: transparent url(wonderportraits256_exp2.png) -512px -512px no-repeat;
+}
+.BUILDING_RED_FORT {
+    background: transparent url(wonderportraits256_exp2.png) -1024px -256px no-repeat;
+}
+.BUILDING_BIG_BEN {
+    background: transparent url(wonderatlas.png) -768px -512px no-repeat;
+}
+.BUILDING_LOUVRE {
+    background: transparent url(wonderatlas.png) -1280px -512px no-repeat;
+}
+.BUILDING_BRANDENBURG_GATE {
+    background: transparent url(wonderatlas.png) -1024px -512px no-repeat;
+}
+.BUILDING_KREMLIN {
+    background: transparent url(wonderatlas.png) -1280px -256px no-repeat;
+}
+.BUILDING_STATUE_OF_LIBERTY {
+    background: transparent url(wonderatlas.png) -1792px -512px no-repeat;
+}
+.BUILDING_EIFFEL_TOWER {
+    background: transparent url(wonderatlas.png) -1536px -512px no-repeat;
+}
+.BUILDING_NEUSCHWANSTEIN {
+    background: transparent url(wonderportraits256_expansion.png) -0px -256px no-repeat;
+}
+.BUILDING_BROADWAY {
+    background: transparent url(wonderportraits256_exp2.png) -256px -256px no-repeat;
+}
+.BUILDING_PRORA_RESORT {
+    background: transparent url(wonderportraits256_exp2.png) -256px -512px no-repeat;
+}
+.BUILDING_CRISTO_REDENTOR {
+    background: transparent url(wonderatlas.png) -0px -768px no-repeat;
+}
+.BUILDING_PENTAGON {
+    background: transparent url(wonderatlas.png) -1280px -1280px no-repeat;
+}
+.BUILDING_SYDNEY_OPERA_HOUSE {
+    background: transparent url(wonderatlas.png) -768px -768px no-repeat;
+}
+.BUILDING_CN_TOWER {
+    background: transparent url(wonderportraits256_expansion.png) -256px -0px no-repeat;
+}
+.BUILDING_HUBBLE {
+    background: transparent url(wonderportraits256_expansion.png) -768px -0px no-repeat;
+}
+.BUILDING_GREAT_FIREWALL {
+    background: transparent url(wonderportraits256_expansion.png) -768px -512px no-repeat;
+}

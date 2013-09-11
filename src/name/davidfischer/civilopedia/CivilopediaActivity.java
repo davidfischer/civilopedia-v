@@ -3,8 +3,10 @@ package name.davidfischer.civilopedia;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import name.davidfischer.civilopedia.entries.BuildingEntry;
 import name.davidfischer.civilopedia.entries.TechnologyEntry;
 import name.davidfischer.civilopedia.entries.UnitEntry;
+import name.davidfischer.civilopedia.fragments.BuildingFragment;
 import name.davidfischer.civilopedia.fragments.CivilopediaFragment;
 import name.davidfischer.civilopedia.fragments.TechnologiesFragment;
 import name.davidfischer.civilopedia.fragments.UnitFragment;
@@ -33,6 +35,7 @@ public class CivilopediaActivity extends Activity {
     // Must match strings.xml
     private static final String TECHNOLOGIES = "TECHNOLOGIES";
     private static final String UNITS = "UNITS";
+    private static final String BUILDINGS = "BUILDINGS";
 
     private DrawerLayout mDrawerLayout;
     private ExpandableListView mDrawerList;
@@ -150,6 +153,8 @@ public class CivilopediaActivity extends Activity {
             fragment = new TechnologiesFragment();
         } else if (name.equalsIgnoreCase(UNITS)) {
             fragment = new UnitFragment();
+        } else if (name.equalsIgnoreCase(BUILDINGS)) {
+            fragment = new BuildingFragment();
         }
 
         return fragment;
@@ -175,6 +180,8 @@ public class CivilopediaActivity extends Activity {
                 subcategories = TechnologyEntry.getTechnologies(this);
             } else if (mCategoryNames[i].equalsIgnoreCase(UNITS)) {
                 subcategories = UnitEntry.getUnits(this);
+            } else if (mCategoryNames[i].equalsIgnoreCase(BUILDINGS)) {
+                subcategories = BuildingEntry.getBuildings(this);
             } else {
                 Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
                 subcategories = new ArrayList<String>();
