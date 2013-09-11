@@ -6,10 +6,12 @@ import java.util.HashMap;
 import name.davidfischer.civilopedia.entries.BuildingEntry;
 import name.davidfischer.civilopedia.entries.TechnologyEntry;
 import name.davidfischer.civilopedia.entries.UnitEntry;
+import name.davidfischer.civilopedia.entries.WonderEntry;
 import name.davidfischer.civilopedia.fragments.BuildingFragment;
 import name.davidfischer.civilopedia.fragments.CivilopediaFragment;
 import name.davidfischer.civilopedia.fragments.TechnologiesFragment;
 import name.davidfischer.civilopedia.fragments.UnitFragment;
+import name.davidfischer.civilopedia.fragments.WonderFragment;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -36,6 +38,7 @@ public class CivilopediaActivity extends Activity {
     private static final String TECHNOLOGIES = "TECHNOLOGIES";
     private static final String UNITS = "UNITS";
     private static final String BUILDINGS = "BUILDINGS";
+    private static final String WONDERS = "WONDERS";
 
     private DrawerLayout mDrawerLayout;
     private ExpandableListView mDrawerList;
@@ -155,6 +158,8 @@ public class CivilopediaActivity extends Activity {
             fragment = new UnitFragment();
         } else if (name.equalsIgnoreCase(BUILDINGS)) {
             fragment = new BuildingFragment();
+        } else if (name.equalsIgnoreCase(WONDERS)) {
+            fragment = new WonderFragment();
         }
 
         return fragment;
@@ -182,6 +187,8 @@ public class CivilopediaActivity extends Activity {
                 subcategories = UnitEntry.getUnits(this);
             } else if (mCategoryNames[i].equalsIgnoreCase(BUILDINGS)) {
                 subcategories = BuildingEntry.getBuildings(this);
+            } else if (mCategoryNames[i].equalsIgnoreCase(WONDERS)) {
+                subcategories = WonderEntry.getWonders(this);
             } else {
                 Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
                 subcategories = new ArrayList<String>();
