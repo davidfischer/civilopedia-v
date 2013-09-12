@@ -12,6 +12,8 @@ import os
 import civ5
 
 
+ICON_SIZE = 128
+
 OUTCSS = '''.{key} {{
     background: transparent url({filename}) -{xpos}px -{ypos}px no-repeat;
 }}
@@ -38,9 +40,9 @@ TECHNOLOGY_ICONS_SQL = '''
   FROM Technologies
     INNER JOIN IconTextureAtlases
       ON Atlas = IconAtlas
-  WHERE IconSize = 256
+  WHERE IconSize = {}
   ORDER BY Cost
-'''
+'''.format(ICON_SIZE)
 
 UNIT_ICONS_SQL = '''
   SELECT
@@ -51,9 +53,9 @@ UNIT_ICONS_SQL = '''
   FROM Units
     INNER JOIN IconTextureAtlases
       ON Atlas = IconAtlas
-  WHERE IconSize = 256
+  WHERE IconSize = {}
   ORDER BY Cost;
-'''
+'''.format(ICON_SIZE)
 
 # Includes wonders!
 BUILDINGS_ICONS_SQL = '''
@@ -65,9 +67,9 @@ BUILDINGS_ICONS_SQL = '''
   FROM Buildings
     INNER JOIN IconTextureAtlases
       ON Atlas = IconAtlas
-  WHERE IconSize = 256
+  WHERE IconSize = {}
   ORDER BY Cost;
-'''
+'''.format(ICON_SIZE)
 
 ICONS_SQL_LIST = (
     TECHNOLOGY_ICONS_SQL,
@@ -92,8 +94,8 @@ def create_css(db_dir, outfile='assets/civilopedia_v.css'):
 
             for sql in ICONS_SQL_LIST:
                 for row in game_db.conn.execute(sql):
-                    xpos = int(row['position'] % int(row['IconsPerRow'])) * 256
-                    ypos = int(row['position'] / int(row['IconsPerRow'])) * 256
+                    xpos = int(row['position'] % int(row['IconsPerRow'])) * ICON_SIZE
+                    ypos = int(row['position'] / int(row['IconsPerRow'])) * ICON_SIZE
                     writer.write(OUTCSS.format(key=row['key'],
                                                filename=row['filename'].replace('.dds', '.png'),
                                                xpos=xpos, ypos=ypos))

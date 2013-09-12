@@ -16,6 +16,6 @@ h2 {
 .technology, .unit, .building {
   margin-left: auto;
   margin-right: auto;
-  height: 256px;
-  width: 256px;
+  height: 128px;
+  width: 128px;
 }
