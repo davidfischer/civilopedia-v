@@ -32,4 +32,12 @@
     <string name="about_opensource_commonslang_url">
         http://www.apache.org/licenses/LICENSE-2.0
     </string>
+
+    <!-- Affiliate information -->
+    <string name="affiliate_civ5_bravenewworld_url">
+        http://www.amazon.com/gp/product/B00CYOHL48/ref=as_li_qf_sp_asin_il?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00CYOHL48&amp;linkCode=as2&amp;tag=mygipa-20
+    </string>
+    <string name="affiliate_civ5_goldedition_url">
+        http://www.amazon.com/gp/product/B00BCNV1CA/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00BCNV1CA&amp;linkCode=as2&amp;tag=mygipa-20
+    </string>
 </resources>
