@@ -5,13 +5,15 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="8sp"
         android:textColor="#000"
         android:textIsSelectable="true"
-        android:autoLink="all"
-        android:text="@string/about_text" />
-
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:text="@string/about_copyright_heading" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,11 +23,48 @@
         android:text="@string/about_copyright" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8sp"
+        android:textColor="#000"
+        android:textIsSelectable="true"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:text="@string/about_source_url_heading" />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000"
         android:textIsSelectable="true"
         android:autoLink="all"
         android:textSize="12sp"
-        android:text="@string/about_url" />
+        android:text="@string/about_source_url" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8sp"
+        android:textColor="#000"
+        android:textIsSelectable="true"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:text="@string/about_opensource_heading" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textIsSelectable="true"
+        android:autoLink="all"
+        android:textSize="12sp"
+        android:text="@string/about_opensource_commonslang" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textIsSelectable="true"
+        android:autoLink="all"
+        android:textSize="12sp"
+        android:text="@string/about_opensource_commonslang_url" />
 </LinearLayout>
