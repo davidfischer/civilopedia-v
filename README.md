@@ -3,6 +3,8 @@ Civilopedia V
 
 This application contains an offline version of the
 [Civilization V][civilization-v] civilopedia.
+This application is not affiliated with or endorsed by Firaxis Games,
+the developer of Civilization V.
 
 This app is available in [Google Play][civilopedia-google-play].
 No Android permissions whatsoever are required to use this app.
