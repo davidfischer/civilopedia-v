@@ -16,6 +16,9 @@
     <!-- About menu and activity -->
     <string name="menu_about">About</string>
     <string name="about_name">About Civilopedia V</string>
+    <string name="about_buy_civilization">BUY CIVILIZATION:</string>
+    <string name="about_buy_civilization_v">Buy Civilization V</string>
+    <string name="about_buy_civilization_bnw">Buy Civilization V: Brave New World</string>
     <string name="about_copyright_heading">COPYRIGHT:</string>
     <string name="about_copyright">
         The graphics and game text are extracted from the game itself
