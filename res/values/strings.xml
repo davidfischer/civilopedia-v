@@ -22,8 +22,8 @@
     <string name="about_copyright_heading">COPYRIGHT:</string>
     <string name="about_copyright">
         The graphics and game text are extracted from the game itself
-        and are owned by Firaxis, the developer of Civilization V. See
-        the license file accompanying the source code for details.
+        and are owned by Firaxis Games, the developer of Civilization V.
+        This application is not affiliated with or endorsed by Firaxis Games.
     </string>
     <string name="about_source_url_heading">SOURCE CODE:</string>
     <string name="about_source_url">https://github.com/davidfischer/civilopedia-v</string>
