@@ -64,7 +64,7 @@ public class SubheadingExpandableListAdapter extends BaseExpandableListAdapter {
             Log.w(TAG, String.format("Incorrect sizes of lists. len(groups) = %d, len(subheadings) = %d, len(sublistings) = %d", groupData.size(), subheadings.size(), sublistingData.size()));
         } else {
             for (int i = 0; i < groupData.size(); i += 1) {
-                if(subheadings.get(i).size() != sublistingData.get(i).size()) {
+                if (subheadings.get(i).size() != sublistingData.get(i).size()) {
                     Log.w(TAG, String.format("Incorrect size of sublist for group (%d). len(subheadings.get(%d)) = %d, len(sublistings.get(%d)) = %d", i, i, subheadings.get(i).size(), i, sublistingData.get(i).size()));
                 }
             }
@@ -219,7 +219,7 @@ public class SubheadingExpandableListAdapter extends BaseExpandableListAdapter {
             Log.w(TAG, "Subheadings do not have keys!");
             return null;
         }
-        return (String) ((Map<String, ?>)getChild(groupPosition, childPosition)).get(ITEM_KEY);
+        return (String) ((Map<String, ?>) getChild(groupPosition, childPosition)).get(ITEM_KEY);
     }
 
     private void bindView(View view, Map<String, ?> data, String[] from, int[] to) {
