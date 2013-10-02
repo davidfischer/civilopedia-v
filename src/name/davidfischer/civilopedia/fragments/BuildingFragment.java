@@ -2,12 +2,11 @@ package name.davidfischer.civilopedia.fragments;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 
-import name.davidfischer.civilopedia.CivilopediaActivity;
 import name.davidfischer.civilopedia.R;
 import name.davidfischer.civilopedia.entries.BuildingEntry;
+import name.davidfischer.civilopedia.entries.CivilopediaEntry;
 import name.davidfischer.civilopedia.helpers.CivilopediaHtmlHelper;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -21,7 +20,6 @@ public class BuildingFragment extends CivilopediaFragment {
     private static final String TAG = BuildingFragment.class.getName();
     private static final String TYPE = "Buildings";
     private static final String BUILDING_TEMPLATE = "buildings.html";
-    private ArrayList<String> mBuildingNames = null;
 
     public BuildingFragment() {
         // Empty ctor for fragments required
@@ -35,18 +33,16 @@ public class BuildingFragment extends CivilopediaFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadBuildings();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         WebView layout = (WebView) inflater.inflate(R.layout.fragment_civilopedia_entry, container, false);
 
-        int index = getArguments().getInt(CivilopediaActivity.CATEGORY_SUBITEM);
+        String key = getArguments().getString(CivilopediaEntry.ID);
         String html = "";
-        String buildingName = mBuildingNames.get(index);
-        getActivity().setTitle(buildingName);
-        BuildingEntry building = BuildingEntry.getBuildingByName(getActivity(), buildingName);
+        BuildingEntry building = BuildingEntry.getBuildingById(getActivity(), key);
+        getActivity().setTitle(building.getName());
 
         AssetManager manager = getActivity().getAssets();
         try {
@@ -76,11 +72,5 @@ public class BuildingFragment extends CivilopediaFragment {
     @Override
     public void onPause() {
         super.onPause();
-    }
-
-    private void loadBuildings() {
-        if (null == mBuildingNames) {
-            mBuildingNames = BuildingEntry.getBuildings(getActivity());
-        }
     }
 }
