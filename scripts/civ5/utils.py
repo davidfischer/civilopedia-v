@@ -93,6 +93,20 @@ INSERT_WONDERS_SQL = '''
         (_id, name, civilopedia, help, strategy, quote, cost, type)
     VALUES(:_id, :name, :civilopedia, :help, :strategy, :quote, :cost, :type)
 '''
+CREATE_RELIGION_SQL = '''
+    CREATE TABLE religion (
+        _id TEXT PRIMARY KEY,
+        name TEXT,
+        civilopedia TEXT,
+        sort_order INT,
+        type TEXT
+    )
+'''
+INSERT_RELIGION_SQL = '''
+    INSERT INTO religion
+        (_id, name, civilopedia, sort_order, type)
+    VALUES(:_id, :name, :civilopedia, :sort_order, :type)
+'''
 
 CREATE_SQLS = (
     SQL_CREATE_METADATA,
@@ -100,6 +114,7 @@ CREATE_SQLS = (
     CREATE_UNITS_SQL,
     CREATE_BUILDINGS_SQL,
     CREATE_WONDERS_SQL,
+    CREATE_RELIGION_SQL,
 )
 
 
@@ -121,3 +136,5 @@ def write_database(filepath, data):
                             (d for d in data['buildings']))
         db.conn.executemany(INSERT_WONDERS_SQL,
                             (d for d in data['wonders']))
+        db.conn.executemany(INSERT_RELIGION_SQL,
+                            (d for d in data['religion']))
