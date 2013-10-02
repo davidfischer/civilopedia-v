@@ -27,37 +27,49 @@ class GamedataDB(DatabaseAdapter):
     '''
     SQL_TECHNOLOGIES = '''
         SELECT
-          Type AS "_id",
+          t.Type AS "_id",
           l1.Text AS "name",
           l2.Text AS "civilopedia",
           l3.Text AS "help",
           l4.Text AS "quote",
-          Cost AS "cost"
+          Cost AS "cost",
+          l5.Text AS "era"
         FROM Technologies t
+          INNER JOIN Eras e ON e.Type = t.Era
           INNER JOIN locale.Language_en_US l1 ON l1.Tag = t.Description
           INNER JOIN locale.Language_en_US l2 ON l2.Tag = t.Civilopedia
           INNER JOIN locale.Language_en_US l3 ON l3.Tag = t.Help
           INNER JOIN locale.Language_en_US l4 ON l4.Tag = t.Quote
+          INNER JOIN locale.Language_en_US l5 ON l5.Tag = e.Description
         ORDER BY Cost
     '''
     SQL_UNITS = '''
         SELECT
-          Type AS "_id",
+          u.Type AS "_id",
           l1.Text AS "name",
           l2.Text AS "civilopedia",
           l3.Text AS "help",
           l4.Text AS "strategy",
-          Cost AS "cost",
+          u.Cost AS "cost",
           FaithCost AS "faith_cost",
           Combat AS "combat",
           RangedCombat AS "ranged_combat",
           Moves AS "moves",
-          Range AS "range"
+          Range AS "range",
+          PrereqTech AS "technology",
+          CASE WHEN su.Type = 'SPECIALUNIT_PEOPLE' THEN "Great Person"
+               WHEN l5.Tag IS NOT NULL THEN l5.Text
+               WHEN ReligiousStrength > 0 THEN "Religious"
+               ELSE "Starting" END AS "type"
         FROM Units u
+          LEFT JOIN SpecialUnits su ON su.Type = u.Special
+          LEFT JOIN Technologies t ON t.Type = u.PrereqTech
+          LEFT JOIN Eras e ON t.Era = e.Type
           LEFT JOIN locale.Language_en_US l1 ON l1.Tag = u.Description
           LEFT JOIN locale.Language_en_US l2 ON l2.Tag = u.Civilopedia
           LEFT JOIN locale.Language_en_US l3 ON l3.Tag = u.Help
           LEFT JOIN locale.Language_en_US l4 ON l4.Tag = u.Strategy
+          LEFT JOIN locale.Language_en_US l5 ON l5.Tag = e.Description
         WHERE ShowInPedia = 1
         ORDER BY Cost
     '''
@@ -68,18 +80,28 @@ class GamedataDB(DatabaseAdapter):
           l2.Text AS "civilopedia",
           l3.Text AS "help",
           l4.Text AS "strategy",
-          Cost AS "cost",
+          b.Cost AS "cost",
           FaithCost AS "faith_cost",
-          GoldMaintenance AS "maintenance"
+          GoldMaintenance AS "maintenance",
+          PrereqTech AS "technology",
+          CASE WHEN l5.Tag IS NOT NULL THEN l5.Text
+               WHEN bc.Type = 'BUILDINGCLASS_MONUMENT' THEN "Starting"
+               ELSE "Religious" END AS "type",
+          CASE WHEN bc.Type = 'BUILDINGCLASS_MONUMENT' THEN -1
+               WHEN e.ID IS NOT NULL THEN e.ID
+               ELSE -2 END AS "sort_order"   -- Religious first
         FROM Buildings b
           INNER JOIN BuildingClasses bc ON b.BuildingClass = bc.Type
+          LEFT JOIN Technologies t ON t.Type = b.PrereqTech
+          LEFT JOIN Eras e ON t.Era = e.Type
+          LEFT JOIN locale.Language_en_US l5 ON l5.Tag = e.Description
           LEFT JOIN locale.Language_en_US l1 ON l1.Tag = b.Description
           LEFT JOIN locale.Language_en_US l2 ON l2.Tag = b.Civilopedia
           LEFT JOIN locale.Language_en_US l3 ON l3.Tag = b.Help
           LEFT JOIN locale.Language_en_US l4 ON l4.Tag = b.Strategy
         WHERE MaxPlayerInstances <> 1    -- National wonders
           AND MaxGlobalInstances <> 1    -- World wonders
-        ORDER BY Cost
+        ORDER BY b.Cost
     '''
     SQL_WONDERS = '''
         SELECT
@@ -89,7 +111,8 @@ class GamedataDB(DatabaseAdapter):
           l3.Text AS "help",
           l4.Text AS "strategy",
           l5.Text AS "quote",
-          Cost AS "cost"
+          Cost AS "cost",
+          CASE WHEN MaxPlayerInstances = 1 THEN "National Wonder" ELSE "World Wonder" END AS "type"
         FROM Buildings b
           INNER JOIN BuildingClasses bc ON b.BuildingClass = bc.Type
           LEFT JOIN locale.Language_en_US l1 ON l1.Tag = b.Description

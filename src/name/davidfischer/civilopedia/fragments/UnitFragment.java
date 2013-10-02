@@ -2,11 +2,10 @@ package name.davidfischer.civilopedia.fragments;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 
-import name.davidfischer.civilopedia.CivilopediaActivity;
 import name.davidfischer.civilopedia.R;
+import name.davidfischer.civilopedia.entries.CivilopediaEntry;
 import name.davidfischer.civilopedia.entries.UnitEntry;
 import name.davidfischer.civilopedia.helpers.CivilopediaDatabaseHelper;
 import name.davidfischer.civilopedia.helpers.CivilopediaHtmlHelper;
@@ -23,7 +22,6 @@ public class UnitFragment extends CivilopediaFragment {
     private static final String TYPE = "Units";
     private static final String UNIT_TEMPLATE = "units.html";
     private CivilopediaDatabaseHelper mDatabase = null;
-    private ArrayList<String> mUnitNames = null;
 
     public UnitFragment() {
         // Empty ctor for fragments required
@@ -37,18 +35,16 @@ public class UnitFragment extends CivilopediaFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadUnits();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         WebView layout = (WebView) inflater.inflate(R.layout.fragment_civilopedia_entry, container, false);
 
-        int index = getArguments().getInt(CivilopediaActivity.CATEGORY_SUBITEM);
+        String id = getArguments().getString(CivilopediaEntry.ID);
         String html = "";
-        String unitName = mUnitNames.get(index);
-        getActivity().setTitle(unitName);
-        UnitEntry unit = UnitEntry.getUnitByName(getActivity(), unitName);
+        UnitEntry unit = UnitEntry.getUnitById(getActivity(), id);
+        getActivity().setTitle(unit.getName());
 
         AssetManager manager = getActivity().getAssets();
         try {
@@ -77,24 +73,6 @@ public class UnitFragment extends CivilopediaFragment {
         super.onPause();
         if (null != mDatabase) {
             mDatabase.close();
-        }
-    }
-
-    public CivilopediaDatabaseHelper databaseConnect() {
-        if (null == mDatabase) {
-            try {
-                mDatabase = new CivilopediaDatabaseHelper(getActivity());
-            } catch (IOException e) {
-                Log.e(TAG, e.getLocalizedMessage());
-            }
-        }
-        return mDatabase;
-    }
-
-    private void loadUnits() {
-        databaseConnect();
-        if (null == mUnitNames) {
-            mUnitNames = UnitEntry.getUnits(getActivity());
         }
     }
 }

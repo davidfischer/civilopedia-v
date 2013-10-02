@@ -2,11 +2,10 @@ package name.davidfischer.civilopedia.fragments;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 
-import name.davidfischer.civilopedia.CivilopediaActivity;
 import name.davidfischer.civilopedia.R;
+import name.davidfischer.civilopedia.entries.CivilopediaEntry;
 import name.davidfischer.civilopedia.entries.TechnologyEntry;
 import name.davidfischer.civilopedia.helpers.CivilopediaHtmlHelper;
 import android.content.res.AssetManager;
@@ -21,7 +20,6 @@ public class TechnologiesFragment extends CivilopediaFragment {
     private static final String TAG = TechnologiesFragment.class.getName();
     private static final String TYPE = "Technologies";
     private static final String TECHNOLOGY_TEMPLATE = "technologies.html";
-    private ArrayList<String> mTechnologyNames = null;
 
     public TechnologiesFragment() {
         // Empty ctor for fragments required
@@ -35,18 +33,17 @@ public class TechnologiesFragment extends CivilopediaFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadTechnologies();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         WebView layout = (WebView) inflater.inflate(R.layout.fragment_civilopedia_entry, container, false);
 
-        int index = getArguments().getInt(CivilopediaActivity.CATEGORY_SUBITEM);
+        String key = getArguments().getString(CivilopediaEntry.ID);
         String html = "";
-        String techName = mTechnologyNames.get(index);
-        getActivity().setTitle(techName);
-        TechnologyEntry tech = TechnologyEntry.getTechnologyByName(getActivity(), techName);
+
+        TechnologyEntry tech = TechnologyEntry.getTechnologyById(getActivity(), key);
+        getActivity().setTitle(tech.getName());
 
         AssetManager manager = getActivity().getAssets();
         try {
@@ -73,11 +70,5 @@ public class TechnologiesFragment extends CivilopediaFragment {
     @Override
     public void onPause() {
         super.onPause();
-    }
-
-    private void loadTechnologies() {
-        if (null == mTechnologyNames) {
-            mTechnologyNames = TechnologyEntry.getTechnologies(getActivity());
-        }
     }
 }
