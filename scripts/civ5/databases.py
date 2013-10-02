@@ -124,6 +124,22 @@ class GamedataDB(DatabaseAdapter):
           OR MaxGlobalInstances = 1    -- World wonders
         ORDER BY Cost
     '''
+    SQL_RELIGION = '''
+        SELECT
+          b.Type AS "_id",
+          l1.Text AS "name",
+          l2.Text AS "civilopedia",
+          (Reformation * 10000 + Enhancer * 1000 + Follower * 100 + Founder * 10 + Pantheon) AS "sort_order",
+          CASE WHEN Pantheon = 1 THEN "Pantheon Beliefs"
+               WHEN Founder = 1 THEN "Founder Beliefs"
+               WHEN Follower = 1 THEN "Follower Beliefs"
+               WHEN Enhancer = 1 THEN "Enhancer Beliefs"
+               ELSE "Reformation Beliefs" END AS "type"
+        FROM Beliefs b
+          LEFT JOIN locale.Language_en_US l1 ON l1.Tag = b.ShortDescription
+          LEFT JOIN locale.Language_en_US l2 ON l2.Tag = b.Description
+        ORDER BY b.Type
+    '''
 
     def __init__(self, filepath):
         super(GamedataDB, self).__init__(filepath)
@@ -156,4 +172,9 @@ class GamedataDB(DatabaseAdapter):
     def get_wonders(self):
         with self.conn:
             for row in self.conn.execute(self.SQL_WONDERS):
+                yield dict(row)
+
+    def get_religion(self):
+        with self.conn:
+            for row in self.conn.execute(self.SQL_RELIGION):
                 yield dict(row)

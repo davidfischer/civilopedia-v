@@ -8,6 +8,7 @@
         <item>Units</item>
         <item>Buildings</item>
         <item>Wonders</item>
+        <item>Religion</item>
     </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>
