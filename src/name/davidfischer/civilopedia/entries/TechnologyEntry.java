@@ -13,12 +13,13 @@ public class TechnologyEntry extends CivilopediaEntry {
     private static final String TAG = TechnologyEntry.class.getName();
 
     private static final String TECHNOLOGY_TABLE = "technology";
-    private static final String TECHNOLOGY_COL_ID = "_id";
-    private static final String TECHNOLOGY_COL_NAME = "name";
+    private static final String TECHNOLOGY_COL_ID = ID;
+    private static final String TECHNOLOGY_COL_NAME = NAME;
     private static final String TECHNOLOGY_COL_CIVILOPEDIA = "civilopedia";
     private static final String TECHNOLOGY_COL_HELP = "help";
     private static final String TECHNOLOGY_COL_QUOTE = "quote";
     private static final String TECHNOLOGY_COL_COST = "cost";
+    private static final String TECHNOLOGY_COL_ERA = "era";
     private static final String [] TECHNOLOGY_COLS = new String [] {
         TECHNOLOGY_COL_ID,
         TECHNOLOGY_COL_NAME,
@@ -26,11 +27,13 @@ public class TechnologyEntry extends CivilopediaEntry {
         TECHNOLOGY_COL_HELP,
         TECHNOLOGY_COL_QUOTE,
         TECHNOLOGY_COL_COST,
+        TECHNOLOGY_COL_ERA,
     };
 
     // Members
     private String mKey;
     private String mName;
+    private String mGroup;
     private String mQuote;
     private String mCivilopedia;
     private String mHelp;
@@ -39,6 +42,7 @@ public class TechnologyEntry extends CivilopediaEntry {
     public TechnologyEntry() {
     }
 
+    @Override
     public String getKey() {
         return mKey;
     }
@@ -47,12 +51,22 @@ public class TechnologyEntry extends CivilopediaEntry {
         this.mKey = key;
     }
 
+    @Override
     public String getName() {
         return mName;
     }
 
     public void setName(String name) {
         this.mName = name;
+    }
+
+    @Override
+    public String getGroup() {
+        return mGroup;
+    }
+
+    public void setGroup(String group) {
+        mGroup = group;
     }
 
     public String getQuote() {
@@ -87,20 +101,54 @@ public class TechnologyEntry extends CivilopediaEntry {
         this.mCost = cost;
     }
 
-    public static ArrayList<String> getTechnologies(Context context) {
+    public static ArrayList<String> getGroups(Context context) {
         ArrayList<String> result = new ArrayList<String>();
         SQLiteDatabase conn = null;
         Cursor cursor = null;
         try {
+            // Gets distinct eras sorted by cost
             conn = new CivilopediaDatabaseHelper(context).openConnection();
-            cursor = conn.query(TECHNOLOGY_TABLE,
-                    new String [] { TECHNOLOGY_COL_NAME }, null, null, null,
-                    null, TECHNOLOGY_COL_COST + "," + TECHNOLOGY_COL_ID);
+            cursor = conn.query(TECHNOLOGY_TABLE, new String [] { TECHNOLOGY_COL_ERA }, null, null,
+                    TECHNOLOGY_COL_ERA, null, TECHNOLOGY_COL_COST + "," + TECHNOLOGY_COL_ID);
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                String a = cursor.getString(0);
-                result.add(a);
+                result.add(cursor.getString(0));
+                cursor.moveToNext();
+            }
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to get technology groups: " + e.getLocalizedMessage());
+        } finally {
+            if (null != cursor) {
+                cursor.close();
+            }
+            if (null != conn) {
+                conn.close();
+            }
+        }
+        return result;
+    }
+
+    public static ArrayList<CivilopediaEntry> getEntries(Context context) {
+        ArrayList<CivilopediaEntry> result = new ArrayList<CivilopediaEntry>();
+        SQLiteDatabase conn = null;
+        Cursor cursor = null;
+        try {
+            conn = new CivilopediaDatabaseHelper(context).openConnection();
+            cursor = conn.query(TECHNOLOGY_TABLE, TECHNOLOGY_COLS, null, null,
+                    null, null, TECHNOLOGY_COL_COST + "," + TECHNOLOGY_COL_ID);
+
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                TechnologyEntry tech = new TechnologyEntry();
+                tech.setKey(cursor.getString(0));
+                tech.setName(cursor.getString(1));
+                tech.setCivilopedia(cursor.getString(2));
+                tech.setHelp(cursor.getString(3));
+                tech.setQuote(cursor.getString(4));
+                tech.setCost(cursor.getInt(5));
+                tech.setGroup(cursor.getString(6));
+                result.add(tech);
                 cursor.moveToNext();
             }
         } catch (IOException e) {
@@ -117,7 +165,7 @@ public class TechnologyEntry extends CivilopediaEntry {
         return result;
     }
 
-    public static TechnologyEntry getTechnologyByName(Context context, String techName) {
+    public static TechnologyEntry getTechnologyById(Context context, String key) {
         TechnologyEntry tech = new TechnologyEntry();
         SQLiteDatabase conn = null;
         Cursor cursor = null;
@@ -125,7 +173,7 @@ public class TechnologyEntry extends CivilopediaEntry {
         try {
             conn = new CivilopediaDatabaseHelper(context).openConnection();
             cursor = conn.query(TECHNOLOGY_TABLE, TECHNOLOGY_COLS,
-                    TECHNOLOGY_COL_NAME + "=?", new String [] { techName },
+                    TECHNOLOGY_COL_ID + "=?", new String [] { key },
                     null, null, null);
             cursor.moveToFirst();
             if (!cursor.isAfterLast()) {
@@ -135,9 +183,10 @@ public class TechnologyEntry extends CivilopediaEntry {
                 tech.setHelp(cursor.getString(3));
                 tech.setQuote(cursor.getString(4));
                 tech.setCost(cursor.getInt(5));
+                tech.setGroup(cursor.getString(6));
             }
         } catch (IOException e) {
-            Log.e(TAG, "Failed to get technology (" + techName + "): " + e.getLocalizedMessage());
+            Log.e(TAG, "Failed to get technology (" + key + "): " + e.getLocalizedMessage());
         } finally {
             if (null != cursor) {
                 cursor.close();

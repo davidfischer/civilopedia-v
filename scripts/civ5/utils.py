@@ -1,6 +1,9 @@
 from .databases import DatabaseAdapter
 
 
+SQL_FOREIGN_KEY_ON = '''
+    PRAGMA foreign_keys = ON
+'''
 SQL_CREATE_METADATA = '''
     CREATE TABLE "android_metadata" ("locale" TEXT DEFAULT 'en_US')
 '''
@@ -14,13 +17,14 @@ CREATE_TECHNOLOGIES_SQL = '''
         civilopedia TEXT,
         help TEXT,
         quote TEXT,
-        cost INTEGER
+        cost INTEGER,
+        era TEXT
     )
 '''
 INSERT_TECHNOLOGIES_SQL = '''
     INSERT INTO technology
-        (_id, name, civilopedia, help, quote, cost)
-    VALUES(:_id, :name, :civilopedia, :help, :quote, :cost)
+        (_id, name, civilopedia, help, quote, cost, era)
+    VALUES(:_id, :name, :civilopedia, :help, :quote, :cost, :era)
 '''
 CREATE_UNITS_SQL = '''
     CREATE TABLE unit (
@@ -34,15 +38,20 @@ CREATE_UNITS_SQL = '''
         combat INTEGER,
         ranged_combat INTEGER,
         moves INTEGER,
-        range INTEGER
+        range INTEGER,
+        technology TEXT NULL,
+        type TEXT,
+        FOREIGN KEY (technology) REFERENCES technology (_id)
     )
 '''
 INSERT_UNITS_SQL = '''
     INSERT INTO unit
         (_id, name, civilopedia, help, strategy, cost,
-         faith_cost, combat, ranged_combat, moves, range)
+         faith_cost, combat, ranged_combat, moves, range,
+         technology, type)
     VALUES(:_id, :name, :civilopedia, :help, :strategy, :cost,
-           :faith_cost, :combat, :ranged_combat, :moves, :range)
+           :faith_cost, :combat, :ranged_combat, :moves, :range,
+           :technology, :type)
 '''
 CREATE_BUILDINGS_SQL = '''
     CREATE TABLE building (
@@ -53,15 +62,19 @@ CREATE_BUILDINGS_SQL = '''
         strategy TEXT,
         cost INTEGER,
         faith_cost INTEGER,
-        maintenance INTEGER
+        maintenance INTEGER,
+        technology TEXT,
+        type TEXT,
+        sort_order INT,
+        FOREIGN KEY (technology) REFERENCES technology (_id)
     )
 '''
 INSERT_BUILDINGS_SQL = '''
     INSERT INTO building
         (_id, name, civilopedia, help, strategy, cost,
-         faith_cost, maintenance)
+         faith_cost, maintenance, technology, type, sort_order)
     VALUES(:_id, :name, :civilopedia, :help, :strategy, :cost,
-           :faith_cost, :maintenance)
+           :faith_cost, :maintenance, :technology, :type, :sort_order)
 '''
 CREATE_WONDERS_SQL = '''
     CREATE TABLE wonder (
@@ -71,13 +84,14 @@ CREATE_WONDERS_SQL = '''
         help TEXT,
         strategy TEXT,
         quote TEXT,
-        cost INTEGER
+        cost INTEGER,
+        type TEXT
     )
 '''
 INSERT_WONDERS_SQL = '''
     INSERT INTO wonder
-        (_id, name, civilopedia, help, strategy, quote, cost)
-    VALUES(:_id, :name, :civilopedia, :help, :strategy, :quote, :cost)
+        (_id, name, civilopedia, help, strategy, quote, cost, type)
+    VALUES(:_id, :name, :civilopedia, :help, :strategy, :quote, :cost, :type)
 '''
 
 CREATE_SQLS = (
@@ -92,6 +106,8 @@ CREATE_SQLS = (
 def write_database(filepath, data):
     db = DatabaseAdapter(filepath)
     with db.conn:
+        db.conn.execute(SQL_FOREIGN_KEY_ON)
+
         for sql in CREATE_SQLS:
             db.conn.execute(sql)
 

@@ -2,8 +2,11 @@ package name.davidfischer.civilopedia;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import name.davidfischer.civilopedia.entries.BuildingEntry;
+import name.davidfischer.civilopedia.entries.CivilopediaEntry;
 import name.davidfischer.civilopedia.entries.TechnologyEntry;
 import name.davidfischer.civilopedia.entries.UnitEntry;
 import name.davidfischer.civilopedia.entries.WonderEntry;
@@ -12,6 +15,7 @@ import name.davidfischer.civilopedia.fragments.CivilopediaFragment;
 import name.davidfischer.civilopedia.fragments.TechnologiesFragment;
 import name.davidfischer.civilopedia.fragments.UnitFragment;
 import name.davidfischer.civilopedia.fragments.WonderFragment;
+import name.davidfischer.civilopedia.ui.SubheadingExpandableListAdapter;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -27,12 +31,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
 
 public class CivilopediaActivity extends Activity {
     private static final String TAG = CivilopediaActivity.class.getName();
     public static final String CATEGORY = "CATEGORY";
-    public static final String CATEGORY_SUBITEM = "CATEGORY_SUBITEM";
+    public static final String CATEGORY_SUBHEADING = "CATEGORY_SUBHEADING";
 
     // Must match strings.xml
     private static final String TECHNOLOGIES = "TECHNOLOGIES";
@@ -45,8 +48,9 @@ public class CivilopediaActivity extends Activity {
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mTitle;
     private String [] mCategoryNames;
-    private ArrayList<HashMap<String, String>> mCategoryList;
-    private ArrayList<ArrayList<HashMap<String, String>>> mSubcategoryList;
+    private List<? extends Map<String, ?>> mCategoryList;
+    private List<? extends List<? extends List<? extends Map<String, ?>>>> mSubcategoryList;
+    private List<? extends List<? extends Map<String, ?>>> mSubheadingList;
 
     /** Called when the activity is first created. */
     @Override
@@ -59,19 +63,24 @@ public class CivilopediaActivity extends Activity {
         mDrawerList = (ExpandableListView) findViewById(R.id.left_drawer);
         mCategoryList = createCategoryList();
         mSubcategoryList = createSubcategoryList();
+        mSubheadingList = createSubheadingList();
 
         // Set the adapter for the expandable list view
         // This sets the various category texts into the left panel
-        SimpleExpandableListAdapter expListAdapter =
-                new SimpleExpandableListAdapter(
+        SubheadingExpandableListAdapter expListAdapter =
+                new SubheadingExpandableListAdapter(
                         this,
                         mCategoryList,                         // Creating group List.
                         R.layout.drawer_list_item,             // Group item layout XML.
                         new String[] { CATEGORY },             // the key of group item.
                         new int[] { R.id.category_text },      // ID of each group item.-Data under the key goes into this TextView.
+                        mSubheadingList,
+                        R.layout.drawer_sublist_heading,
+                        new String[] { CATEGORY_SUBHEADING },
+                        new int[] { R.id.category_child_heading },
                         mSubcategoryList,                      // childData describes second-level entries.
                         R.layout.drawer_sublist_item,          // Layout for sub-level entries(second level).
-                        new String[] { CATEGORY_SUBITEM },     // Keys in childData maps to display.
+                        new String[] { CivilopediaEntry.NAME },     // Keys in childData maps to display.
                         new int[] { R.id.category_child}       // Data under the keys above go into these TextViews.
                     );
         mDrawerList.setAdapter(expListAdapter);
@@ -107,7 +116,7 @@ public class CivilopediaActivity extends Activity {
         // If no item is selected (no app state) then open the drawer
         if (null == savedInstanceState) {
             setTitle(R.string.app_name);
-            selectItem(0, 0);
+            selectItem(0, 1);
             mDrawerLayout.openDrawer(GravityCompat.START);
         }
     }
@@ -123,14 +132,17 @@ public class CivilopediaActivity extends Activity {
 
     //Swaps fragments in the main content view.
     private void selectItem(int groupPosition, int childPosition) {
-        Log.v(TAG, String.format("Replacing main content frame with group, child = (%d, %d)", groupPosition, childPosition));
+        SubheadingExpandableListAdapter expListAdapter = (SubheadingExpandableListAdapter) mDrawerList.getExpandableListAdapter();
+        String key = expListAdapter.getChildKey(groupPosition, childPosition);
+
+        Log.v(TAG, String.format("Replacing main content frame with group, child = (%d, %d), key = %s", groupPosition, childPosition, key));
 
         // update the main content by replacing fragments
         CivilopediaFragment fragment = getFragmentFromCategoryName(mCategoryNames[groupPosition]);
 
         if (null != fragment) {
             Bundle args = new Bundle();
-            args.putInt(CATEGORY_SUBITEM, childPosition);
+            args.putString(CivilopediaEntry.ID, key);
             fragment.setArguments(args);
 
             // Replace whatever is in the fragment_container view with this fragment,
@@ -176,30 +188,82 @@ public class CivilopediaActivity extends Activity {
         return result;
     }
 
-    private ArrayList<ArrayList<HashMap<String, String>>> createSubcategoryList() {
+    private ArrayList<ArrayList<HashMap<String, String>>> createSubheadingList() {
         ArrayList<ArrayList<HashMap<String, String>>> result = new ArrayList<ArrayList<HashMap<String, String>>>();
-        ArrayList<String> subcategories;
+        ArrayList<String> sectionNames;
 
         for (int i = 0; i < mCategoryNames.length; i += 1) {
             if (mCategoryNames[i].equalsIgnoreCase(TECHNOLOGIES)) {
-                subcategories = TechnologyEntry.getTechnologies(this);
+                sectionNames = TechnologyEntry.getGroups(this);
             } else if (mCategoryNames[i].equalsIgnoreCase(UNITS)) {
-                subcategories = UnitEntry.getUnits(this);
+                sectionNames = UnitEntry.getGroups(this);
             } else if (mCategoryNames[i].equalsIgnoreCase(BUILDINGS)) {
-                subcategories = BuildingEntry.getBuildings(this);
+                sectionNames = BuildingEntry.getGroups(this);
             } else if (mCategoryNames[i].equalsIgnoreCase(WONDERS)) {
-                subcategories = WonderEntry.getWonders(this);
+                sectionNames = WonderEntry.getGroups(this);
             } else {
                 Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
-                subcategories = new ArrayList<String>();
+                sectionNames = new ArrayList<String>();
             }
-            ArrayList<HashMap<String, String>> subList = new ArrayList<HashMap<String, String>>();
-            for (int j = 0; j < subcategories.size(); j += 1) {
-                HashMap<String, String> child = new HashMap<String, String>();
-                child.put(CATEGORY_SUBITEM, subcategories.get(j));
-                subList.add(child);
+            ArrayList<HashMap<String, String>> arr = new ArrayList<HashMap<String, String>>();
+            for (int j = 0; j < sectionNames.size(); j += 1) {
+                HashMap<String, String> group = new HashMap<String, String>();
+                group.put(CATEGORY_SUBHEADING, sectionNames.get(j));
+                arr.add(group);
             }
-            result.add(subList);
+            result.add(arr);
+        }
+        return result;
+    }
+
+    /**
+     * [
+     *   [
+     *     [
+     *       // individual entries here (eg. compass)
+     *     ]
+     *   ]  // sections (eg. ancient era)
+     * ]  // categories  (eg. technologies)
+     */
+    private ArrayList<ArrayList<ArrayList<HashMap<String, String>>>> createSubcategoryList() {
+        ArrayList<ArrayList<ArrayList<HashMap<String, String>>>> result = new ArrayList<ArrayList<ArrayList<HashMap<String, String>>>>();
+        ArrayList<CivilopediaEntry> subcategories;
+        ArrayList<String> sectionNames;
+
+        for (int i = 0; i < mCategoryNames.length; i += 1) {
+            if (mCategoryNames[i].equalsIgnoreCase(TECHNOLOGIES)) {
+                sectionNames = TechnologyEntry.getGroups(this);
+                subcategories = TechnologyEntry.getEntries(this);
+            } else if (mCategoryNames[i].equalsIgnoreCase(UNITS)) {
+                sectionNames = UnitEntry.getGroups(this);
+                subcategories = UnitEntry.getEntries(this);
+            } else if (mCategoryNames[i].equalsIgnoreCase(BUILDINGS)) {
+                sectionNames = BuildingEntry.getGroups(this);
+                subcategories = BuildingEntry.getEntries(this);
+            } else if (mCategoryNames[i].equalsIgnoreCase(WONDERS)) {
+                sectionNames = WonderEntry.getGroups(this);
+                subcategories = WonderEntry.getEntries(this);
+            } else {
+                Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
+                subcategories = new ArrayList<CivilopediaEntry>();
+                sectionNames = new ArrayList<String>();
+            }
+
+            // Put the entries into the appropriate subsection
+            ArrayList<ArrayList<HashMap<String, String>>> section = new ArrayList<ArrayList<HashMap<String, String>>>();
+            for (int j = 0; j < sectionNames.size(); j += 1) {
+                ArrayList<HashMap<String, String>> subList = new ArrayList<HashMap<String, String>>();
+                for (int k = 0; k < subcategories.size(); k += 1) {
+                    if (subcategories.get(k).getGroup().equals(sectionNames.get(j))) {
+                        HashMap<String, String> child = new HashMap<String, String>();
+                        child.put(CivilopediaEntry.ID, subcategories.get(k).getKey());
+                        child.put(CivilopediaEntry.NAME, subcategories.get(k).getName());
+                        subList.add(child);
+                    }
+                }
+                section.add(subList);
+            }
+            result.add(section);
         }
         return result;
     }

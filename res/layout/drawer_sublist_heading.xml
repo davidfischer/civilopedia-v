@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="#555">
 
-    <TextView android:id="@+id/category_child"
+    <TextView android:id="@+id/category_child_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/activatedBackgroundIndicator"
         android:gravity="center_vertical"
-        android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:paddingLeft="48dp"
+        android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@android:color/white"
+        android:paddingTop="8dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#aaa"
         android:textIsSelectable="false" />
 
 </LinearLayout>
