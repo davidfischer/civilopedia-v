@@ -147,7 +147,7 @@ public class WonderEntry extends CivilopediaEntry {
         try {
             conn = new CivilopediaDatabaseHelper(context).openConnection();
             cursor = conn.query(WONDER_TABLE, WONDER_COLS, null, null, null,
-                    null, WONDER_COL_COST + "," + WONDER_COL_ID);
+                    null, WONDER_COL_NAME + "," + WONDER_COL_ID);
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {

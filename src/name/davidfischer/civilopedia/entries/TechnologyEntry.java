@@ -136,7 +136,7 @@ public class TechnologyEntry extends CivilopediaEntry {
         try {
             conn = new CivilopediaDatabaseHelper(context).openConnection();
             cursor = conn.query(TECHNOLOGY_TABLE, TECHNOLOGY_COLS, null, null,
-                    null, null, TECHNOLOGY_COL_COST + "," + TECHNOLOGY_COL_ID);
+                    null, null, TECHNOLOGY_COL_NAME + "," + TECHNOLOGY_COL_ID);
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {

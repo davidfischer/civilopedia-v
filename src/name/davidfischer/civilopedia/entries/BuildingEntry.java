@@ -162,7 +162,7 @@ public class BuildingEntry extends CivilopediaEntry {
         try {
             conn = new CivilopediaDatabaseHelper(context).openConnection();
             cursor = conn.query(BUILDING_TABLE, BUILDING_COLS, null, null, null,
-                    null, BUILDING_COL_COST + "," + BUILDING_COL_ID);
+                    null, BUILDING_COL_NAME + "," + BUILDING_COL_ID);
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {

@@ -165,7 +165,7 @@ public class UnitEntry extends CivilopediaEntry {
         try {
             conn = new CivilopediaDatabaseHelper(context).openConnection();
             cursor = conn.query(UNIT_TABLE, new String [] { UNIT_COL_TYPE }, null, null, UNIT_COL_TYPE,
-                    null, UNIT_COL_COST + "," + UNIT_COL_ID);
+                    null, UNIT_COL_NAME + "," + UNIT_COL_ID);
 
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
