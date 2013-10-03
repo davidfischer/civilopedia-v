@@ -71,10 +71,28 @@ BUILDINGS_ICONS_SQL = '''
   ORDER BY Cost;
 '''.format(ICON_SIZE)
 
+# Policies have no 128 size, only 64 and 256
+# Note: the png files have been resized to size=128
+POLICIES_ICONS_SQL = '''
+  SELECT
+    p.Type AS "key",
+    PortraitIndex AS "position",
+    LOWER(Filename) AS "filename",
+    IconsPerRow
+  FROM Policies p
+    INNER JOIN PolicyBranchTypes pb ON pb.Type = p.PolicyBranchType
+    INNER JOIN IconTextureAtlases ON Atlas = IconAtlas
+    LEFT JOIN Eras e
+      ON pb.EraPrereq = e.Type   -- Ancient era policies have no prereq
+  WHERE IconSize = 256
+  ORDER BY e.Type, p.Type;
+'''
+
 ICONS_SQL_LIST = (
     TECHNOLOGY_ICONS_SQL,
     UNIT_ICONS_SQL,
     BUILDINGS_ICONS_SQL,
+    POLICIES_ICONS_SQL,
 )
 
 def create_css(db_dir, outfile='assets/civilopedia_v.css'):
