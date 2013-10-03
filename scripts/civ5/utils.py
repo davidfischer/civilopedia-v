@@ -107,6 +107,21 @@ INSERT_RELIGION_SQL = '''
         (_id, name, civilopedia, sort_order, type)
     VALUES(:_id, :name, :civilopedia, :sort_order, :type)
 '''
+CREATE_POLICIES_SQL = '''
+    CREATE TABLE policy (
+        _id TEXT PRIMARY KEY,
+        name TEXT,
+        help TEXT,
+        civilopedia TEXT,
+        sort_order INT,
+        type TEXT
+    )
+'''
+INSERT_POLICIES_SQL = '''
+    INSERT INTO policy
+        (_id, name, help, civilopedia, sort_order, type)
+    VALUES(:_id, :name, :help, :civilopedia, :sort_order, :type)
+'''
 
 CREATE_SQLS = (
     SQL_CREATE_METADATA,
@@ -115,6 +130,16 @@ CREATE_SQLS = (
     CREATE_BUILDINGS_SQL,
     CREATE_WONDERS_SQL,
     CREATE_RELIGION_SQL,
+    CREATE_POLICIES_SQL,
+)
+
+INSERT_SQLS = (
+    ('technology', INSERT_TECHNOLOGIES_SQL),
+    ('units', INSERT_UNITS_SQL),
+    ('buildings', INSERT_BUILDINGS_SQL),
+    ('wonders', INSERT_WONDERS_SQL),
+    ('religion', INSERT_RELIGION_SQL),
+    ('policies', INSERT_POLICIES_SQL),
 )
 
 
@@ -128,13 +153,5 @@ def write_database(filepath, data):
 
         db.conn.execute(SQL_METADATA_INSERT)
 
-        db.conn.executemany(INSERT_TECHNOLOGIES_SQL,
-                            (d for d in data['technology']))
-        db.conn.executemany(INSERT_UNITS_SQL,
-                            (d for d in data['units']))
-        db.conn.executemany(INSERT_BUILDINGS_SQL,
-                            (d for d in data['buildings']))
-        db.conn.executemany(INSERT_WONDERS_SQL,
-                            (d for d in data['wonders']))
-        db.conn.executemany(INSERT_RELIGION_SQL,
-                            (d for d in data['religion']))
+        for key, sql in INSERT_SQLS:
+            db.conn.executemany(sql, (d for d in data[key]))

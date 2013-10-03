@@ -140,6 +140,25 @@ class GamedataDB(DatabaseAdapter):
           LEFT JOIN locale.Language_en_US l2 ON l2.Tag = b.Description
         ORDER BY b.Type
     '''
+    SQL_POLICIES = '''
+        SELECT
+          p.Type AS "_id",
+          l1.Text AS "name",
+          l2.Text AS "civilopedia",
+          l4.Text AS "help",
+          l3.Text as "type",
+          CASE WHEN e.ID IS NOT NULL THEN e.ID
+               ELSE 0 END AS "sort_order"
+        FROM Policies p
+          INNER JOIN PolicyBranchTypes pb ON pb.Type = p.PolicyBranchType
+          LEFT JOIN Eras e
+            ON pb.EraPrereq = e.Type   -- Ancient era policies have no prereq
+          LEFT JOIN locale.Language_en_US l1 ON l1.Tag = p.Description
+          LEFT JOIN locale.Language_en_US l2 ON l2.Tag = p.Civilopedia
+          LEFT JOIN locale.Language_en_US l4 ON l4.Tag = p.Help
+          LEFT JOIN locale.Language_en_US l3 ON l3.Tag = pb.Description
+        ORDER BY sort_order, p.Type
+    '''
 
     def __init__(self, filepath):
         super(GamedataDB, self).__init__(filepath)
@@ -177,4 +196,9 @@ class GamedataDB(DatabaseAdapter):
     def get_religion(self):
         with self.conn:
             for row in self.conn.execute(self.SQL_RELIGION):
+                yield dict(row)
+
+    def get_policies(self):
+        with self.conn:
+            for row in self.conn.execute(self.SQL_POLICIES):
                 yield dict(row)

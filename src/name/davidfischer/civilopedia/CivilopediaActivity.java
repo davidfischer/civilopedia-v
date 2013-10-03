@@ -7,12 +7,14 @@ import java.util.Map;
 
 import name.davidfischer.civilopedia.entries.BuildingEntry;
 import name.davidfischer.civilopedia.entries.CivilopediaEntry;
+import name.davidfischer.civilopedia.entries.PolicyEntry;
 import name.davidfischer.civilopedia.entries.ReligionEntry;
 import name.davidfischer.civilopedia.entries.TechnologyEntry;
 import name.davidfischer.civilopedia.entries.UnitEntry;
 import name.davidfischer.civilopedia.entries.WonderEntry;
 import name.davidfischer.civilopedia.fragments.BuildingFragment;
 import name.davidfischer.civilopedia.fragments.CivilopediaFragment;
+import name.davidfischer.civilopedia.fragments.PolicyFragment;
 import name.davidfischer.civilopedia.fragments.ReligionFragment;
 import name.davidfischer.civilopedia.fragments.TechnologiesFragment;
 import name.davidfischer.civilopedia.fragments.UnitFragment;
@@ -45,6 +47,7 @@ public class CivilopediaActivity extends Activity {
     private static final String BUILDINGS = "BUILDINGS";
     private static final String WONDERS = "WONDERS";
     private static final String RELIGION = "RELIGION";
+    private static final String POLICIES = "SOCIAL POLICIES";
 
     private DrawerLayout mDrawerLayout;
     private ExpandableListView mDrawerList;
@@ -177,6 +180,8 @@ public class CivilopediaActivity extends Activity {
             fragment = new WonderFragment();
         } else if (name.equalsIgnoreCase(RELIGION)) {
             fragment = new ReligionFragment();
+        } else if (name.equalsIgnoreCase(POLICIES)) {
+            fragment = new PolicyFragment();
         }
 
         return fragment;
@@ -208,6 +213,8 @@ public class CivilopediaActivity extends Activity {
                 sectionNames = WonderEntry.getGroups(this);
             } else if (mCategoryNames[i].equalsIgnoreCase(RELIGION)) {
                 sectionNames = ReligionEntry.getGroups(this);
+            } else if (mCategoryNames[i].equalsIgnoreCase(POLICIES)) {
+                sectionNames = PolicyEntry.getGroups(this);
             } else {
                 Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
                 sectionNames = new ArrayList<String>();
@@ -253,6 +260,9 @@ public class CivilopediaActivity extends Activity {
             } else if (mCategoryNames[i].equalsIgnoreCase(RELIGION)) {
                 sectionNames = ReligionEntry.getGroups(this);
                 subcategories = ReligionEntry.getEntries(this);
+            } else if (mCategoryNames[i].equalsIgnoreCase(POLICIES)) {
+                sectionNames = PolicyEntry.getGroups(this);
+                subcategories = PolicyEntry.getEntries(this);
             } else {
                 Log.w(TAG, "Unknown civilopedia category: " + mCategoryNames[i]);
                 subcategories = new ArrayList<CivilopediaEntry>();
