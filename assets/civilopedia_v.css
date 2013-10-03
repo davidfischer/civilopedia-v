@@ -1538,3 +1538,282 @@
 .BUILDING_GREAT_FIREWALL {
     background: transparent url(wonderportraits128_expansion.png) -384px -256px no-repeat;
 }
+.POLICY_ARISTOCRACY {
+    background: transparent url(socialpolicies2048.png) -896px -768px no-repeat;
+}
+.POLICY_CITIZENSHIP {
+    background: transparent url(socialpolicies2048.png) -256px -384px no-repeat;
+}
+.POLICY_COLLECTIVE_RULE {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -128px -0px no-repeat;
+}
+.POLICY_DISCIPLINE {
+    background: transparent url(socialpolicies2048.png) -512px -256px no-repeat;
+}
+.POLICY_FREE_RELIGION {
+    background: transparent url(socialpolicies2048.png) -896px -640px no-repeat;
+}
+.POLICY_LANDED_ELITE {
+    background: transparent url(socialpolicies2048.png) -256px -896px no-repeat;
+}
+.POLICY_LEGALISM {
+    background: transparent url(socialpolicies2048.png) -128px -896px no-repeat;
+}
+.POLICY_MANDATE_OF_HEAVEN {
+    background: transparent url(socialpolicies2048.png) -512px -640px no-repeat;
+}
+.POLICY_MERITOCRACY {
+    background: transparent url(socialpolicies2048.png) -640px -384px no-repeat;
+}
+.POLICY_MILITARY_CASTE {
+    background: transparent url(socialpolicies2048.png) -768px -256px no-repeat;
+}
+.POLICY_MILITARY_TRADITION {
+    background: transparent url(socialpolicies2048.png) -640px -256px no-repeat;
+}
+.POLICY_MONARCHY {
+    background: transparent url(socialpolicies2048.png) -384px -896px no-repeat;
+}
+.POLICY_OLIGARCHY {
+    background: transparent url(socialpolicies2048.png) -0px -896px no-repeat;
+}
+.POLICY_ORGANIZED_RELIGION {
+    background: transparent url(socialpolicies2048.png) -384px -640px no-repeat;
+}
+.POLICY_PROFESSIONAL_ARMY {
+    background: transparent url(socialpolicies2048.png) -896px -256px no-repeat;
+}
+.POLICY_REFORMATION {
+    background: transparent url(socialpolicies2048.png) -768px -640px no-repeat;
+}
+.POLICY_REPRESENTATION {
+    background: transparent url(socialpolicies2048.png) -512px -384px no-repeat;
+}
+.POLICY_REPUBLIC {
+    background: transparent url(socialpolicies2048.png) -384px -384px no-repeat;
+}
+.POLICY_THEOCRACY {
+    background: transparent url(socialpolicies2048.png) -640px -640px no-repeat;
+}
+.POLICY_WARRIOR_CODE {
+    background: transparent url(socialpolicies2048.png) -384px -256px no-repeat;
+}
+.POLICY_ARTISTIC_GENIUS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -0px -0px no-repeat;
+}
+.POLICY_CONSULATES {
+    background: transparent url(socialpolicies2048.png) -768px -512px no-repeat;
+}
+.POLICY_CULTURAL_CENTERS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -0px no-repeat;
+}
+.POLICY_CULTURAL_DIPLOMACY {
+    background: transparent url(socialpolicies2048.png) -0px -640px no-repeat;
+}
+.POLICY_ETHICS {
+    background: transparent url(socialpolicies2048.png) -128px -256px no-repeat;
+}
+.POLICY_FINE_ARTS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -0px -128px no-repeat;
+}
+.POLICY_FLOURISHING_OF_ARTS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -128px -128px no-repeat;
+}
+.POLICY_MERCHANT_CONFEDERACY {
+    background: transparent url(socialpolicies2048.png) -128px -640px no-repeat;
+}
+.POLICY_PHILANTHROPY {
+    background: transparent url(socialpolicies2048.png) -640px -512px no-repeat;
+}
+.POLICY_SCHOLASTICISM {
+    background: transparent url(socialpolicies2048.png) -896px -512px no-repeat;
+}
+.POLICY_ACADEMY_SCIENCES {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_ARSENAL_DEMOCRACY {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_CAPITALISM {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_CIVIL_SOCIETY {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_COVERT_ACTION {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_CREATIVE_EXPRESSION {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_CULTURAL_REVOLUTION {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_CULT_PERSONALITY {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_DICTATORSHIP_PROLETARIAT {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_DOUBLE_AGENTS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_ECONOMIC_UNION {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_ELITE_FORCES {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_FIVE_YEAR_PLAN {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_FORTIFIED_BORDERS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_FUTURISM {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_GUNBOAT_DIPLOMACY {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_HERO_OF_THE_PEOPLE {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_INDUSTRIAL_ESPIONAGE {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_IRON_CURTAIN {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_LIGHTNING_WARFARE {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_MEDIA_CULTURE {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_MILITARISM {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_MOBILIZATION {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_NATIONALISM {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_NEW_DEAL {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_NEW_ORDER {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_OPEN_SOCIETY {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_PARTY_LEADERSHIP {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_PATRIOTIC_WAR {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_POLICE_STATE {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_RESETTLEMENT {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_SKYSCRAPERS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_SOCIALIST_REALISM {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_SPACEFLIGHT_PIONEERS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_SPACE_PROCUREMENTS {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_THEIR_FINEST_HOUR {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_THIRD_ALTERNATIVE {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_TOTAL_WAR {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_TREATY_ORGANIZATION {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_UNITED_FRONT {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_UNIVERSAL_HEALTHCARE_A {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -256px no-repeat;
+}
+.POLICY_UNIVERSAL_HEALTHCARE_F {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_UNIVERSAL_HEALTHCARE_O {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_UNIVERSAL_SUFFRAGE {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_URBANIZATION {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_VOLUNTEER_ARMY {
+    background: transparent url(socialpolicies2048.png) -128px -384px no-repeat;
+}
+.POLICY_WORKERS_FACULTIES {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_YOUNG_PIONEERS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -256px no-repeat;
+}
+.POLICY_CARAVANS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -128px -256px no-repeat;
+}
+.POLICY_ENTREPRENEURSHIP {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -0px no-repeat;
+}
+.POLICY_MARITIME_INFRASTRUCTURE {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -256px -128px no-repeat;
+}
+.POLICY_MERCANTILISM {
+    background: transparent url(socialpolicies2048.png) -128px -128px no-repeat;
+}
+.POLICY_MERCHANT_NAVY {
+    background: transparent url(socialpolicies2048.png) -256px -128px no-repeat;
+}
+.POLICY_NAVAL_TRADITION {
+    background: transparent url(socialpolicies2048.png) -0px -128px no-repeat;
+}
+.POLICY_NAVIGATION_SCHOOL {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -384px -128px no-repeat;
+}
+.POLICY_PROTECTIONISM {
+    background: transparent url(socialpolicies2048.png) -384px -128px no-repeat;
+}
+.POLICY_TRADE_UNIONS {
+    background: transparent url(socialpolicies2048.png) -896px -0px no-repeat;
+}
+.POLICY_TREASURE_FLEETS {
+    background: transparent url(socialpoliciesportrait256_exp2.png) -0px -256px no-repeat;
+}
+.POLICY_FREE_THOUGHT {
+    background: transparent url(socialpolicies2048.png) -384px -768px no-repeat;
+}
+.POLICY_HUMANISM {
+    background: transparent url(socialpolicies2048.png) -512px -768px no-repeat;
+}
+.POLICY_SCIENTIFIC_REVOLUTION {
+    background: transparent url(socialpolicies2048.png) -640px -768px no-repeat;
+}
+.POLICY_SECULARISM {
+    background: transparent url(socialpolicies2048.png) -128px -768px no-repeat;
+}
+.POLICY_SOVEREIGNTY {
+    background: transparent url(socialpolicies2048.png) -256px -768px no-repeat;
+}
