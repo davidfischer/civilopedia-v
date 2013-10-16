@@ -362,6 +362,9 @@
 .ICON_VICTORY_DOMINATION {
     background: transparent url(fonticons.png) -198px -220px no-repeat;
 }
+.ICON_SWAP {
+    background: transparent url(fonticons.png) -220px -220px no-repeat;
+}
 .ICON_TURNS_REMAINING {
     background: transparent url(fonticons.png) -220px -220px no-repeat;
 }
@@ -1106,6 +1109,9 @@
 .UNIT_ATOMIC_BOMB {
     background: transparent url(unitportraitsrenaissanceindustrial1024.png) -0px -384px no-repeat;
 }
+.UNIT_NUCLEAR_MISSILE {
+    background: transparent url(unitportraitsrenaissanceindustrial1024.png) -384px -512px no-repeat;
+}
 .UNIT_SS_STASIS_CHAMBER {
     background: transparent url(wonderatlas1024.png) -768px -512px no-repeat;
 }
@@ -1117,9 +1123,6 @@
 }
 .UNIT_SS_BOOSTER {
     background: transparent url(wonderatlas1024.png) -384px -512px no-repeat;
-}
-.UNIT_NUCLEAR_MISSILE {
-    background: transparent url(unitportraitsrenaissanceindustrial1024.png) -384px -512px no-repeat;
 }
 .BUILDING_MONASTERY {
     background: transparent url(buildingatlas1024.png) -768px -512px no-repeat;
@@ -1345,6 +1348,9 @@
 }
 .BUILDING_CEILIDH_HALL {
     background: transparent url(buildingportraits128_expansion.png) -384px -0px no-repeat;
+}
+.BUILDING_HANSE {
+    background: transparent url(buildingportraits3_128_exp2patch.png) -0px -0px no-repeat;
 }
 .BUILDING_MUSICIANS_GUILD {
     background: transparent url(buildingportraits128_exp2.png) -256px -128px no-repeat;
@@ -1611,7 +1617,7 @@
     background: transparent url(socialpolicies2048.png) -0px -640px no-repeat;
 }
 .POLICY_ETHICS {
-    background: transparent url(socialpolicies2048.png) -128px -256px no-repeat;
+    background: transparent url(socialpoliciesportrait_patch256_exp2.png) -128px -0px no-repeat;
 }
 .POLICY_FINE_ARTS {
     background: transparent url(socialpoliciesportrait256_exp2.png) -0px -128px no-repeat;
@@ -1797,7 +1803,7 @@
     background: transparent url(socialpolicies2048.png) -384px -128px no-repeat;
 }
 .POLICY_TRADE_UNIONS {
-    background: transparent url(socialpolicies2048.png) -896px -0px no-repeat;
+    background: transparent url(socialpoliciesportrait_patch256_exp2.png) -0px -0px no-repeat;
 }
 .POLICY_TREASURE_FLEETS {
     background: transparent url(socialpoliciesportrait256_exp2.png) -0px -256px no-repeat;
