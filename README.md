@@ -6,7 +6,8 @@ This application contains an offline version of the
 This application is not affiliated with or endorsed by Firaxis Games,
 the developer of Civilization V.
 
-This app is available in [Google Play][civilopedia-google-play].
+This app is available in [Google Play][civilopedia-google-play]
+and the [Amazon Android Appstore][civilopedia-amazon-appstore].
 No Android permissions whatsoever are required to use this app.
 
 
@@ -33,4 +34,5 @@ See the associated LICENSE.md and NOTICE.md files for details.
 
 [civilization-v]: http://www.civilization5.com
 [civilopedia-google-play]: https://play.google.com/store/apps/details?id=name.davidfischer.civilopedia
+[civilopedia-amazon-appstore]: http://www.amazon.com/David-Fischer-Civilopedia-V/dp/B00GT98O4A/
 [apache-ant]: http://ant.apache.org
