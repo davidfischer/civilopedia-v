@@ -4,7 +4,7 @@
       android:versionCode="3"
       android:versionName="1.1.1">
     <uses-sdk android:minSdkVersion="15"
-              android:targetSdkVersion="18" />
+              android:targetSdkVersion="19" />
     <application android:label="@string/app_name"
                  android:icon="@drawable/ruin_launcher"
                  android:allowBackup="true"
